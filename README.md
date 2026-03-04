@@ -1,3 +1,16 @@
+# 🚀 Get Started
+
+1. Open this repo in a **Codespace** (click the green **Code** button → **Create a Codespace**)
+2. Open **GitHub Copilot Chat** and ask:
+
+```
+read GUIDANCE.md and help me get this repo ready
+```
+
+That's it — Copilot will walk you through the rest.
+
+---
+
 <p align="center">
 <img src="img/banner-build-26.png" alt="Microsoft Build 2026" width="1200"/>
 </p>
