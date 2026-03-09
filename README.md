@@ -78,7 +78,9 @@ For more information, setup instructions for other dev clients, and to post comm
 
 ### 💬 Keep Learning with Copilot
 
-Try these prompts with GitHub Copilot to explore the topics from this session. Make sure you have the [Microsoft Learn MCP Server](https://github.com/MicrosoftDocs/MCP) connected so Copilot can pull in the latest official documentation.
+Try these prompts with GitHub Copilot to explore the topics from this session. Open Copilot Chat in VS Code (`Ctrl+Alt+I` on Windows/Linux, `Cmd+Shift+I` on Mac), paste a prompt, and see what you learn. Make sure you have the [Microsoft Learn MCP Server](https://github.com/MicrosoftDocs/MCP) connected so Copilot can pull in the latest official documentation.
+
+Use these as a starting point — or write your own!
 
 <!-- Prompts will be tailored to this session's content during repo setup. -->
 

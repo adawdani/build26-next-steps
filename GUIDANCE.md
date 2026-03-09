@@ -266,7 +266,29 @@ Good prompts should:
 - Encourage hands-on exploration (e.g., "Ask Copilot to help you build a [thing] using [technology]")
 - Reference the Learn MCP Server for finding official docs (e.g., "Ask Copilot to find the latest docs on [technology] and summarize the key concepts")
 - Progress from beginner to more advanced
-- Be copy-pasteable — the attendee should be able to paste the prompt directly into Copilot Chat
+- Be copy-pasteable — format each prompt in a fenced code block so attendees can copy and paste directly into Copilot Chat
+
+Example format for the README:
+
+````markdown
+1. Understand the basics:
+
+```
+Explain how [technology] works and what problems it solves
+```
+
+2. Go deeper:
+
+```
+Using the Microsoft Learn MCP Server, find the latest documentation on [feature] and walk me through how to set it up
+```
+
+3. Build something:
+
+```
+Help me create a simple [project] using [technology] based on what we covered in this session
+```
+````
 
 Present them to the creator: *"Based on your session content, here are some prompts I'd suggest for the 'Keep Learning' section: [list]. Want me to use these, or would you like to tweak any?"*
 
