@@ -257,6 +257,25 @@ Clean up unused folders:
 
 ---
 
+### Refine Content, Step 6: Suggest Learning Prompts
+
+Copilot: **Read through all the session content in the repo** — docs, source code, README — and propose 3-5 prompts for the **💬 Keep Learning with Copilot** section in the README. These prompts should help attendees continue exploring the session topics after Build using GitHub Copilot and the Microsoft Learn MCP Server.
+
+Good prompts should:
+- Be specific to the session's technologies and scenarios (not generic)
+- Encourage hands-on exploration (e.g., "Ask Copilot to help you build a [thing] using [technology]")
+- Reference the Learn MCP Server for finding official docs (e.g., "Ask Copilot to find the latest docs on [technology] and summarize the key concepts")
+- Progress from beginner to more advanced
+- Be copy-pasteable — the attendee should be able to paste the prompt directly into Copilot Chat
+
+Present them to the creator: *"Based on your session content, here are some prompts I'd suggest for the 'Keep Learning' section: [list]. Want me to use these, or would you like to tweak any?"*
+
+After confirmation, replace the placeholder text in the **💬 Keep Learning with Copilot** section with the confirmed prompts formatted as a numbered list.
+
+**On repeat passes:** Re-read the content and update the prompts if the material has changed significantly. Tell the creator what you changed and why.
+
+---
+
 ### ✅ Refine Content Complete (for now)
 
 Copilot: When this pass is done, show a summary of what was organized or changed and tell the creator:

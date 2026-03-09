@@ -76,6 +76,14 @@ For more information, setup instructions for other dev clients, and to post comm
 | Resources          | Links                             | Description        |
 |:-------------------|:----------------------------------|:-------------------|
 
+### 💬 Keep Learning with Copilot
+
+Try these prompts with GitHub Copilot to explore the topics from this session. Make sure you have the [Microsoft Learn MCP Server](https://github.com/MicrosoftDocs/MCP) connected so Copilot can pull in the latest official documentation.
+
+<!-- Prompts will be tailored to this session's content during repo setup. -->
+
+> *Prompts coming soon — check back after the session content is finalized.*
+
 ## Content Owners
 
 <!-- TODO: Add yourself as a content owner
