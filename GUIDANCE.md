@@ -27,9 +27,8 @@ Your Copilot agent will guide you through **three phases** so you can make progr
 ### How to start
 
 1. **[Fork this repo](../../fork)** to your personal GitHub account — you'll do all your work in the fork.
-2. Add your session materials to the fork (see **Get Started** below).
-3. Open your fork in a **Codespace** (or clone it locally).
-4. Open GitHub Copilot Chat and say:
+2. Open your fork in a **Codespace** (or clone it locally).
+3. Open GitHub Copilot Chat and say:
 
 - `read GUIDANCE.md and help me get started` — to set up session info
 - `read GUIDANCE.md and help me refine my content` — to organize and improve your content (run as many times as you like)
@@ -52,27 +51,32 @@ These rules apply to **all three phases**:
 
 # 🟢 Get Started
 
-**When to run:** You've added some session materials to the repo — your abstract, an outline, notes from your slides, or even just a paragraph describing your talk. The agent needs something to scan so it can propose answers instead of asking cold questions.
+**When to run:** As soon as the creator opens the Codespace and asks for help. The agent will check whether they've added session materials yet and guide them if not.
 
-**Before you begin — add your materials to the repo:**
-Drop in whatever you have right now. It doesn't need to be polished. Any of these work:
-- Your session abstract or description (a few sentences is enough)
-- A session outline or agenda
-- Notes extracted from your slide deck
-- A screenshot of your session overview (the agent can read images)
-- A markdown or text file describing what the session covers
+**First thing the agent should do — check for session materials:**
+Scan the repo for any files beyond the standard template (README.md, GUIDANCE.md, AGENTS.md, LICENSE, SECURITY.md, CODE_OF_CONDUCT.md, SUPPORT.md, `.devcontainer/`, `.github/`, `.vscode/`, `img/`, `src/`, `docs/`). If you find new files — markdown, text, images, PDFs, anything the creator added — great, use them as context.
 
-Add it as a file in the root of the repo (e.g., `abstract.md`, `outline.md`, `notes.txt`). The more context the agent has, the better its suggestions will be.
+If you find **only template files** (nothing new has been added), guide the creator to add materials before proceeding:
+
+*"I don't see any session materials in the repo yet — just the standard template files. Before I can make suggestions, I need something to work from. Could you drag some files into the Explorer panel on the left? Any of these work:"*
+- *Your session abstract or description*
+- *A session outline or agenda*
+- *Notes extracted from your slide deck*
+- *A screenshot of your session overview (I can read images)*
+- *A text file describing what the session covers*
+
+*"Even a few sentences in a text file is enough to get started. Drop them in the root folder and let me know when you're ready."*
+
+Once materials are present, proceed with the steps below.
 
 **What to have ready:**
-- [ ] Session materials added to the repo (see above)
 - [ ] Session code and title (e.g., "BRK123: Building Scalable AI Solutions")
 - [ ] General idea of learning outcomes and technologies
 - [ ] Names and GitHub handles of content owners
 
 **What this phase does NOT cover:** Documentation structure, getting-started steps, source code, slides, or recordings — you don't need those yet.
 
-**Input flexibility:** The agent will scan the repo for any materials you've added — markdown files, text files, images, or anything else it can find. You can also paste additional context directly into chat, point the agent at a specific file, or describe your session in your own words. The agent will use whatever it can find to propose answers — you just confirm or correct.
+**Input flexibility:** The agent will scan the repo for any materials you've added — markdown files, text files, images, or anything else it can find. You can also paste additional context directly into chat, or describe your session in your own words. The more context the agent has, the better its suggestions will be.
 
 ---
 

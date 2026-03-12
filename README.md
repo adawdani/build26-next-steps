@@ -11,15 +11,14 @@ Your GitHub Copilot agent will guide you through **three phases** — you don't 
 **To get started:**
 
 1. **[Fork this repo](../../fork)** to your personal GitHub account — you'll do your work in the fork.
-2. **Add your session materials to the repo** — the agent works best when it has something to scan. Drop in whatever you have: your abstract, a session outline, notes from your slide deck, or even just a paragraph describing your session. Add it as a markdown or text file in the root of the repo.
-3. Open your fork in a **Codespace** (click the green **Code** button → **Create a Codespace**)
-4. Open **GitHub Copilot Chat** and ask:
+2. Open your fork in a **Codespace** (click the green **Code** button → **Create a Codespace**)
+3. Open **GitHub Copilot Chat** and ask:
 
 ```
 read GUIDANCE.md and help me get started
 ```
 
-The agent will scan your materials, propose answers, and ask you to confirm — much faster than starting from scratch. Come back for **Refine Content** when you have more material, and run it as many times as you need as your content evolves.
+The agent will check whether you've added any session materials (abstract, outline, screenshots, etc.). If not, it will help you add them — just drag files into the Explorer panel on the left. Once the agent has something to work with, it will scan your materials, propose answers, and ask you to confirm.
 
 ---
 
