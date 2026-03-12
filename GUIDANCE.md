@@ -6,7 +6,7 @@ Thanks for creating content for Build! You can follow this guidance yourself if 
 
 **Microsoft Build 2026 Repository Setup Guide**
 
-**For Content Creators:** This guide walks you through preparing your Build 2026 repository in three phases. You don't need to do everything at once — each phase matches a natural milestone in your session prep. Use GitHub Copilot to work through each phase interactively.
+**For Content Creators:** Your GitHub Copilot agent will guide you through preparing your Build 2026 repository in three phases. You don't need to do everything at once — each phase matches a natural milestone in your session prep. The agent works through each phase interactively, scanning your repo and making suggestions for you to confirm or adjust.
 
 **For Copilot:** When a content creator asks you to help prepare their repository, read this entire file. Determine which phase they want to work on (or detect it based on what's already filled in), then guide them through that phase. **Be proactive** — scan the repo, propose answers based on what you find, and ask the creator to confirm rather than asking questions cold.
 
@@ -14,15 +14,15 @@ Thanks for creating content for Build! You can follow this guidance yourself if 
 
 ## 📋 Phase Overview
 
-This repo is set up in **three phases** so you can make progress as your session comes together:
+Your Copilot agent will guide you through **three phases** so you can make progress as your session comes together:
 
 | Phase | When to Run | What You Need | Time |
 |-------|-------------|---------------|------|
-| **Get Started** | As soon as the repo is created | Session code, title, abstract | ~15 min |
+| **Get Started** | After you've added your session abstract or outline to the repo | Session code, title, abstract, or outline | ~15 min |
 | **Refine Content** | Each time you have new or updated content | Lab instructions, demo code, outlines | ~20 min per pass |
 | **Finalize** | When the repo is ready for publication | Everything reviewed and complete | ~15 min |
 
-**You don't have to do all three phases in one sitting.** Run **Get Started** now, then come back for **Refine Content** when you have material — and run it again whenever your content evolves. When everything is ready, run **Finalize** once to clean up for publication.
+**You don't have to do all three phases in one sitting.** Add your materials, run **Get Started**, then come back for **Refine Content** when you have more — and run it again whenever your content evolves. When everything is ready, run **Finalize** once to clean up for publication.
 
 ### How to start a phase
 
@@ -49,17 +49,27 @@ These rules apply to **all three phases**:
 
 # 🟢 Get Started
 
-**When to run:** You have your session code, title, and abstract — but you may not have any actual content yet. A draft abstract, session outline, or even a paragraph describing your talk is enough.
+**When to run:** You've added some session materials to the repo — your abstract, an outline, notes from your slides, or even just a paragraph describing your talk. The agent needs something to scan so it can propose answers instead of asking cold questions.
+
+**Before you begin — add your materials to the repo:**
+Drop in whatever you have right now. It doesn't need to be polished. Any of these work:
+- Your session abstract or description (a few sentences is enough)
+- A session outline or agenda
+- Notes extracted from your slide deck
+- A screenshot of your session overview (the agent can read images)
+- A markdown or text file describing what the session covers
+
+Add it as a file in the root of the repo (e.g., `abstract.md`, `outline.md`, `notes.txt`). The more context the agent has, the better its suggestions will be.
 
 **What to have ready:**
+- [ ] Session materials added to the repo (see above)
 - [ ] Session code and title (e.g., "BRK123: Building Scalable AI Solutions")
-- [ ] Session description or abstract (2-3 sentences)
 - [ ] General idea of learning outcomes and technologies
 - [ ] Names and GitHub handles of content owners
 
 **What this phase does NOT cover:** Documentation structure, getting-started steps, source code, slides, or recordings — you don't need those yet.
 
-**Input flexibility:** You can provide your info by answering questions one at a time, pasting your abstract into chat, pointing the agent at a .md file you've added to the repo, or even describing your session in a few sentences. The agent will use whatever it can find to propose answers — you just confirm or correct.
+**Input flexibility:** The agent will scan the repo for any materials you've added — markdown files, text files, images, or anything else it can find. You can also paste additional context directly into chat, point the agent at a specific file, or describe your session in your own words. The agent will use whatever it can find to propose answers — you just confirm or correct.
 
 ---
 

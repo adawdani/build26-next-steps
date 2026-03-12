@@ -1,23 +1,24 @@
 # 🚀 Get Started
 
-This repo is set up in **three phases** — you don't need to do everything at once:
+Your GitHub Copilot agent will guide you through **three phases** — you don't need to do everything at once:
 
 | Phase | What it does | When to run it |
 |-------|-------------|----------------|
-| **Get Started** | Sets up session title, description, outcomes, and owners | As soon as the repo is created |
+| **Get Started** | Sets up session title, description, outcomes, and owners | After you've added your session abstract or outline to the repo |
 | **Refine Content** | Organizes your session content into the repo | Each time you add or update content |
 | **Finalize** | Final review, cleanup, and publication prep | When you're ready to publish |
 
 **To get started:**
 
-1. Open this repo in a **Codespace** (click the green **Code** button → **Create a Codespace**)
-2. Open **GitHub Copilot Chat** and ask:
+1. **Add your session materials to the repo** — the agent works best when it has something to scan. Drop in whatever you have: your abstract, a session outline, notes from your slide deck, or even just a paragraph describing your session. Add it as a markdown or text file in the root of the repo.
+2. Open this repo in a **Codespace** (click the green **Code** button → **Create a Codespace**)
+3. Open **GitHub Copilot Chat** and ask:
 
 ```
 read GUIDANCE.md and help me get started
 ```
 
-Copilot will walk you through setting up your session info (~15 minutes). Come back for **Refine Content** when you have material — and run it as many times as you need as your content evolves.
+The agent will scan your materials, propose answers, and ask you to confirm — much faster than starting from scratch. Come back for **Refine Content** when you have more material, and run it as many times as you need as your content evolves.
 
 ---
 
