@@ -41,6 +41,7 @@ Your Copilot agent will guide you through **three phases** so you can make progr
 These rules apply to **all three phases**:
 
 - **Ask one question at a time.** Present your findings for one step, then ask the creator to confirm or adjust — providing specific choices when possible (e.g., "Is this correct?" with Yes/No options, or a list of options to pick from). **Wait for their response before moving to the next step.** Do NOT present multiple steps at once or batch multiple questions at the end. This creates a focused, interactive dialog experience rather than a wall of text.
+- **Always show reply options inline.** When asking a question, list the possible answers as bullet points so the creator knows exactly what to type. For example: *"Reply with one of these: **Yes**, **No**, or type your own answer."* This works well across VS Code, Codespaces, and other environments.
 - **Be proactive.** Read the repo, scan existing files, check the repo name — use every signal available to propose answers rather than asking cold questions. Present your best guess and ask the creator to confirm or correct.
 - **NEVER fabricate content.** Your proposals must be grounded in something you found (repo name, existing files, abstract text, session code). If you have nothing to go on, say so and ask.
 - **NEVER commit changes without confirmation.** Always show the creator what you plan to do and get a "yes" before writing to files.
@@ -93,12 +94,19 @@ Copilot: **Try to detect the session type automatically before asking.** Look at
    - `DEM` or `DEMO` → Demo
 2. **Existing content in the repo** — lab instructions or step-by-step exercises suggest a Lab; demo code with a presentation outline suggests a Demo; slides-only content suggests a Breakout.
 
-If you can determine the type, **confirm** rather than ask: *"Based on the session code [LABxxx], this looks like a Lab. Is that right?"*
+If you can determine the type, **confirm with explicit options** so the creator knows exactly what to reply:
 
-If you can't determine it, ask the creator to choose:
-- **Demo** — A presentation with demo code that customers can explore afterward
-- **Breakout** — A presentation or discussion session, possibly with resource links or supplementary material
-- **Lab** — A hands-on guided session where customers follow step-by-step instructions
+*"Based on the session code [LABxxx], this looks like a **Lab**. Reply with one of these:"*
+- *"**Yes** — it's a Lab"*
+- *"**Breakout** — it's a presentation/discussion session"*
+- *"**Demo** — it's a presentation with demo code"*
+
+If you can't determine it, ask the creator to choose using the same format:
+
+*"What type of session is this? Reply with one:"*
+- *"**Lab** — A hands-on guided session where customers follow step-by-step instructions"*
+- *"**Breakout** — A presentation or discussion session, possibly with resource links or supplementary material"*
+- *"**Demo** — A presentation with demo code that customers can explore afterward"*
 
 Remember their answer — it affects later phases:
 
