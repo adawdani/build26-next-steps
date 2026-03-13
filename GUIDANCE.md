@@ -71,6 +71,8 @@ If you find **only template files** (nothing new has been added), guide the crea
 
 *"Even a few sentences in a text file is enough to get started. Drop them in the root folder and let me know when you're ready."*
 
+*"⚠️ **Please don't upload large binary files** like PowerPoint decks (.pptx), Word documents (.docx), or videos. Git isn't designed for those. Instead, extract the text content into a markdown or text file and add that. If you only have a PowerPoint, you can use M365 Copilot to extract the content for you."*
+
 Once materials are present, proceed with the steps below.
 
 **What to have ready:**
