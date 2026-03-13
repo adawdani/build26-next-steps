@@ -121,6 +121,13 @@ Remember their answer — it affects later phases:
 
 Based on session type, **remove sections from the README that don't apply** (e.g., remove the "🏫 Getting started in a guided session" section for Demos and Breakouts).
 
+**Replace generic "session" language in the README.** The template uses the word "session" throughout as a placeholder. Once you know the type, replace it with the specific term:
+- **Lab** → use "lab" (e.g., "By the end of this lab", "To get started with this lab")
+- **Demo** → use "demo" (e.g., "By the end of this demo", "topics from this demo")
+- **Breakout** → use "presentation" or "session" (either works for breakouts)
+
+Do this as part of the README updates — don't ask the creator about it, just do it.
+
 ---
 
 ### Get Started, Step 2: Update README.md — Session Identity

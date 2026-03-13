@@ -37,24 +37,24 @@ The agent will check whether you've added any session materials (abstract, outli
 ### 🏫 Getting started in a guided session
 
 To get started with this session in a guided lab session:
--
--
--
+- <!-- step 1 -->
+- <!-- step 2 -->
+- <!-- step 3 -->
 
 ### 🏠 Getting started in your own environment
 
 If you're following these steps at your own pace:
 - [Fork this repository](../../fork)
 - Set up your development environment
--
+- <!-- step 3 -->
 
 ### 🧠 Learning Outcomes
 
 By the end of this session, you will be able to:
 
--
--
--
+- <!-- outcome 1 -->
+- <!-- outcome 2 -->
+- <!-- outcome 3 -->
 
 ### 💬 Keep Learning with Copilot
 
@@ -68,9 +68,9 @@ Use these as a starting point — or write your own!
 
 ### 💻 Technologies Used
 
-1.
-1.
-1.
+1. <!-- technology 1 -->
+1. <!-- technology 2 -->
+1. <!-- technology 3 -->
 
 ### 🌟 Microsoft Learn MCP Server
 
