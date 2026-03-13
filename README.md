@@ -1,12 +1,12 @@
 # 🚀 Get Started
 
-Your GitHub Copilot agent will guide you through **three phases** — you don't need to do everything at once:
+Your GitHub Copilot agent will guide you through **three phrases** — you don't need to do everything at once:
 
-| Phase | What it does | When to run it |
-|-------|-------------|----------------|
-| **Get Started** | Sets up session title, description, outcomes, and owners | After you've added your session abstract or outline to the repo |
-| **Refine Content** | Organizes your session content into the repo | Each time you add or update content |
-| **Finalize** | Final review, cleanup, and publication prep | When you're ready to publish |
+| Phrase to use with Copilot | What it does | When to run it |
+|---|---|---|
+| **"Help me get started"** | Sets up session title, description, outcomes, and owners | After you've added your session abstract or outline to the repo |
+| **"Help me refine content"** | Organizes your session content into the repo | Each time you add or update content |
+| **"Help me finalize"** | Final review, cleanup, and publication prep | When you're ready to publish |
 
 **To get started:**
 
