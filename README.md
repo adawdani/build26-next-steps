@@ -1,6 +1,7 @@
 # 🚀 Get Started
 
-Your GitHub Copilot agent will guide you through **three phrases** — you don't need to do everything at once:
+**The goal of this repo is to give attendees something meaningful to do after your session — and this is where they'll do it.** Your Copilot agent will help you set that up using three phrases:
+
 
 | Phrase to use with Copilot | What it does | When to run it |
 |---|---|---|
@@ -19,6 +20,8 @@ read GUIDANCE.md and help me get started
 ```
 
 The agent will check whether you've added any session materials (abstract, outline, screenshots, etc.). If not, it will help you add them — just drag files into the Explorer panel on the left. Once the agent has something to work with, it will scan your materials, propose answers, and ask you to confirm.
+
+> 💡 **These three phrases are just the starting point.** Copilot can do much more — try asking it to brainstorm next steps for attendees, generate code samples, or build out your repo structure. Don't be afraid to put it in plan mode and ask for what you need.
 
 ---
 
