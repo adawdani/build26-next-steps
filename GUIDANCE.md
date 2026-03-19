@@ -48,6 +48,8 @@ These rules apply to **all three phases**:
 - **ALWAYS** highlight missing or unclear information. You can make suggestions, but only implement them after they approve.
 - If something is missing, point it out and suggest: *"I don't see [X] in your content. Based on [Y], I'd suggest [Z] — does that work, or would you like something different?"*
 - When organizing or restructuring existing content, **copy verbatim** — do not paraphrase, embellish, or fill in gaps.
+- **Always spell out product names in full.** Do not use abbreviations like "VS Code" — write "Visual Studio Code." Do not abbreviate "Visual Studio" to "VS." If a creator's source material uses abbreviations, expand them when writing to the README.
+- **Verify current product branding.** Product names change — always use the most up-to-date official name. For example, "Azure AI Foundry" was renamed to "Microsoft Foundry." If you encounter a product name in the creator's materials that may be outdated, flag it and suggest the current name.
 
 ---
 
@@ -120,6 +122,13 @@ Remember their answer — it affects later phases:
 | `src/` folder | ✅ Likely needed | Optional | Optional |
 
 Based on session type, **remove sections from the README that don't apply** (e.g., remove the "🏫 Getting started in a guided session" section for Demos and Breakouts).
+
+**Replace generic "session" language in the README.** The template uses the word "session" throughout as a placeholder. Once you know the type, replace it with the specific term:
+- **Lab** → use "lab" (e.g., "By the end of this lab", "To get started with this lab")
+- **Demo** → use "demo" (e.g., "By the end of this demo", "topics from this demo")
+- **Breakout** → use "presentation" or "session" (either works for breakouts)
+
+Do this as part of the README updates — don't ask the creator about it, just do it.
 
 ---
 
@@ -360,6 +369,7 @@ Copilot: Review the entire repo for completeness and consistency:
 - Check that the README has all sections filled in (no placeholder text remaining)
 - Verify that Getting Started sections accurately reflect the content in the repo
 - Confirm links work and resources are relevant
+- **Run a branding pass:** Check all product names are spelled out in full (no abbreviations like "VS Code" — use "Visual Studio Code") and use current official names (e.g., "Microsoft Foundry" not "Azure AI Foundry"). Flag any issues for the creator.
 - Flag anything that looks incomplete or inconsistent
 
 Report your findings to the creator and ask them to confirm or fix any issues.

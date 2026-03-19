@@ -1,6 +1,7 @@
 # 🚀 Get Started
 
-Your GitHub Copilot agent will guide you through **three phrases** — you don't need to do everything at once:
+**The goal of this repo is to give attendees something meaningful to do after your session — and this is where they'll do it.** Your Copilot agent will help you set that up using three phrases:
+
 
 | Phrase to use with Copilot | What it does | When to run it |
 |---|---|---|
@@ -20,6 +21,8 @@ read GUIDANCE.md and help me get started
 
 The agent will check whether you've added any session materials (abstract, outline, screenshots, etc.). If not, it will help you add them — just drag files into the Explorer panel on the left. Once the agent has something to work with, it will scan your materials, propose answers, and ask you to confirm.
 
+> 💡 **These three phrases are just the starting point.** Copilot can do much more — try asking it to brainstorm next steps for attendees, generate code samples, or build out your repo structure. Don't be afraid to put it in plan mode and ask for what you need.
+
 ---
 
 <p align="center">
@@ -37,24 +40,24 @@ The agent will check whether you've added any session materials (abstract, outli
 ### 🏫 Getting started in a guided session
 
 To get started with this session in a guided lab session:
--
--
--
+- <!-- step 1 -->
+- <!-- step 2 -->
+- <!-- step 3 -->
 
 ### 🏠 Getting started in your own environment
 
 If you're following these steps at your own pace:
 - [Fork this repository](../../fork)
 - Set up your development environment
--
+- <!-- step 3 -->
 
 ### 🧠 Learning Outcomes
 
 By the end of this session, you will be able to:
 
--
--
--
+- <!-- outcome 1 -->
+- <!-- outcome 2 -->
+- <!-- outcome 3 -->
 
 ### 💬 Keep Learning with Copilot
 
@@ -68,9 +71,9 @@ Use these as a starting point — or write your own!
 
 ### 💻 Technologies Used
 
-1.
-1.
-1.
+1. <!-- technology 1 -->
+1. <!-- technology 2 -->
+1. <!-- technology 3 -->
 
 ### 🌟 Microsoft Learn MCP Server
 
