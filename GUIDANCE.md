@@ -55,7 +55,7 @@ These rules apply to **all three phases**:
 
 ## 🔄 Upstream Sync Rules
 
-Creators work in **personal forks** of the upstream `microsoft/` repo. All commits should be pushed back to the **upstream repo**, not just the fork.
+Creators work in **personal forks** of the upstream `microsoft/` repo. All commits should be pushed to the creator's fork (`origin`), then a **pull request** opened to the upstream repo for review.
 
 **At the start of every phase**, the agent should:
 
@@ -79,14 +79,14 @@ Creators work in **personal forks** of the upstream `microsoft/` repo. All commi
 
    Address issues naturally within the current phase's workflow — don't treat them as a separate step.
 
-3. **When committing and pushing**, always push to `upstream main` (not just `origin`):
+3. **When committing and pushing**, push to `origin` (the creator's fork), then open a PR to upstream:
    ```
    git add <files>
    git commit -m "<message>"
-   git push upstream HEAD:main
+   git push origin HEAD
+   gh pr create --repo microsoft/<repo-name> --head <creator>:<branch> --title "<message>" --body "<summary of changes>"
    ```
-   If the push fails due to permissions, fall back to pushing to `origin` and tell the creator:
-   *"I couldn't push directly to the upstream repo. I've pushed to your fork instead. You may need to open a pull request to merge your changes."*
+   Present the PR link to the creator so they can review and merge it themselves.
 
 ---
 
@@ -233,7 +233,7 @@ Copilot: When Get Started is done, show a summary of what was filled in and tell
 
 *"Ready to commit? Reply **Yes** to commit and push, or **No** to skip."*
 
-If the creator says yes, commit with a descriptive message (e.g., `"Get Started: add session title, description, outcomes, and owners"`) and push to the **upstream repo** following the Upstream Sync Rules above (`git push upstream HEAD:main`). If that fails, push to `origin` and advise opening a PR.
+If the creator says yes, commit with a descriptive message (e.g., `"Get Started: add session title, description, outcomes, and owners"`), push to `origin`, and open a PR to the upstream repo following the Upstream Sync Rules above. Share the PR link with the creator.
 
 After committing (or if they skip), tell them:
 
@@ -412,7 +412,7 @@ Copilot: When this pass is done, show a summary of what was organized or changed
 
 *"Ready to commit? Reply **Yes** to commit and push, or **No** to skip."*
 
-If the creator says yes, commit with a descriptive message (e.g., `"Refine Content: organize lab instructions and update resources"`) and push to the **upstream repo** following the Upstream Sync Rules above (`git push upstream HEAD:main`). If that fails, push to `origin` and advise opening a PR.
+If the creator says yes, commit with a descriptive message (e.g., `"Refine Content: organize lab instructions and update resources"`), push to `origin`, and open a PR to the upstream repo following the Upstream Sync Rules above. Share the PR link with the creator.
 
 After committing (or if they skip), tell them:
 
@@ -492,7 +492,7 @@ Copilot: When the creator has confirmed everything looks good:
 
 *"Ready to commit? Reply **Yes** to commit and push, or **No** to skip."*
 
-If the creator says yes, commit with a message like `"Finalize: repo ready for publication"` and push to the **upstream repo** following the Upstream Sync Rules above (`git push upstream HEAD:main`). If that fails, push to `origin` and advise opening a PR.
+If the creator says yes, commit with a message like `"Finalize: repo ready for publication"`, push to `origin`, and open a PR to the upstream repo following the Upstream Sync Rules above. Share the PR link with the creator.
 
 After committing, tell them: *"Your repo is ready for publication! 🎉 Don't forget to double-check the GitHub repository settings (description and tags) if you haven't already."*
 
