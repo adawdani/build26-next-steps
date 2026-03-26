@@ -101,18 +101,18 @@ Creators work in **personal forks** of the upstream `microsoft/` repo. All commi
 Before scanning for files, follow the **Upstream Sync Rules** above: verify the upstream remote is configured and check for open issues in the upstream repo. Present any relevant issues to the creator.
 
 **Then check for session materials:**
-Scan the repo for any files beyond the standard template (README.md, GUIDANCE.md, AGENTS.md, LICENSE, SECURITY.md, CODE_OF_CONDUCT.md, SUPPORT.md, `.devcontainer/`, `.github/`, `.vscode/`, `img/`, `src/`, `docs/`). If you find new files — markdown, text, images, PDFs, anything the creator added — great, use them as context.
+Scan the repo for any files beyond the standard template (README.md, GUIDANCE.md, AGENTS.md, LICENSE, SECURITY.md, CODE_OF_CONDUCT.md, SUPPORT.md, `.devcontainer/`, `.github/`, `.vscode/`, `img/`, `src/`, `docs/`). **Also check `_remove-before-publish/`** for source materials the creator added (session abstracts, screenshots, notes). If you find new files in either location — markdown, text, images, PDFs, anything the creator added — great, use them as context.
 
 If you find **only template files** (nothing new has been added), guide the creator to add materials before proceeding:
 
-*"I don't see any session materials in the repo yet — just the standard template files. Before I can make suggestions, I need something to work from. Could you drag some files into the Explorer panel on the left? Any of these work:"*
+*"I don't see any session materials in the repo yet — just the standard template files. Before I can make suggestions, I need something to work from. Could you drag some files into the `_remove-before-publish/` folder in the Explorer panel on the left? Files in that folder are automatically excluded from git, so they won't end up in your published repo. Any of these work:"*
 - *Your session abstract or description*
 - *A session outline or agenda*
 - *Notes extracted from your slide deck*
 - *A screenshot of your session overview (I can read images)*
 - *A text file describing what the session covers*
 
-*"Even a few sentences in a text file is enough to get started. Drop them in the root folder and let me know when you're ready."*
+*"Even a few sentences in a text file is enough to get started. Drop them in `_remove-before-publish/` and let me know when you're ready."*
 
 *"⚠️ **Please don't upload large binary files** like PowerPoint decks (.pptx), Word documents (.docx), or videos. Git isn't designed for those. Instead, extract the text content into a markdown or text file and add that. If you only have a PowerPoint, you can use M365 Copilot to extract the content for you."*
 
@@ -478,7 +478,8 @@ If the creator has slide/recording links to share, add them to the Resources tab
 Copilot: When the creator has confirmed everything looks good:
 
 1. Remove any remaining placeholder text or unused sections from the README
-2. Show a final summary of the completed repo
+2. Verify the `_remove-before-publish/` folder contains only its README (no leftover source materials that should have been moved to `/docs/` or `/src/`). If files remain, ask: *"I see [files] still in `_remove-before-publish/`. These won't be published (they're gitignored), but do any of them contain content that should be in the published repo?"*
+3. Show a final summary of the completed repo
 3. Ask: *"Are you satisfied with how the repo looks? If so, I'll delete GUIDANCE.md to mark the repo as publication-ready."*
 
 **Only delete GUIDANCE.md if** the creator explicitly confirms they've reviewed everything and are satisfied with the repo.
@@ -488,7 +489,7 @@ Copilot: When the creator has confirmed everything looks good:
 *"I'd like to commit and push the final changes. Here's what I'll commit:"*
 - List all modified/deleted files (e.g., README.md cleanup, GUIDANCE.md deletion)
 
-*"I will **not** commit any source files you uploaded for reference (session abstracts, PowerPoint files, Word documents, etc.) — those were just for context."*
+*"Files in `_remove-before-publish/` are automatically excluded from git — they won't appear in the commit or PR."*
 
 *"Ready to commit? Reply **Yes** to commit and push, or **No** to skip."*
 
