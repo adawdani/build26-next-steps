@@ -176,11 +176,13 @@ Remember their answer — it affects later phases:
 | Element | Demo | Breakout | Lab |
 |---------|------|----------|-----|
 | Getting started (guided session) | ❌ Remove | ❌ Remove | ✅ Keep |
-| Getting started (own environment) | ✅ Keep | ✅ Keep | ✅ Keep |
+| Getting started (own environment) | ✅ Rename to "Getting started" | ✅ Rename to "Getting started" | ✅ Keep as-is |
 | `docs/` folder | Optional | Optional | ✅ Keep |
 | `src/` folder | ✅ Likely needed | Optional | Optional |
 
-Based on session type, **remove sections from the README that don't apply** (e.g., remove the "🏫 Getting started in a guided session" section for Demos and Breakouts).
+Based on session type, **remove sections from the README that don't apply** (e.g., remove the "🏫 Getting started in a guided session" section for Demos and Breakouts). **Preserve the emoji prefixes on all remaining section headings.** When removing a section, do not accidentally strip the emoji from adjacent sections that you're keeping (e.g., the 🏠 on "Getting started in your own environment" must remain).
+
+**For Demos and Breakouts**, rename "🏠 Getting started in your own environment" to "🏠 Getting started" — since there's no guided session section to contrast against, "in your own environment" is unnecessary.
 
 **Replace generic "session" language in the README.** The template uses the word "session" throughout as a placeholder. Once you know the type, replace it with the specific term:
 - **Lab** → use "lab" (e.g., "By the end of this lab", "To get started with this lab")
@@ -334,15 +336,17 @@ Fill in the **🏫 Getting started in a guided session** section after confirmat
 
 #### For Demos and Breakouts:
 
-The **🏫 Getting started in a guided session** section should already have been removed in Get Started. If it's still there, remove it now.
+The **🏫 Getting started in a guided session** section should already have been removed in Get Started. If it's still there, remove it now. The remaining section should already be renamed to "🏠 Getting started" (without "in your own environment"). If it hasn't been renamed, do that now.
 
-**Own environment section (🏠):** Based on the content, propose steps for self-exploration. If the session is primarily a presentation with no hands-on component, suggest simplifying this to point to the resources table.
+**Getting started section (🏠):** Based on the content, propose steps for self-exploration. If the session is primarily a presentation with no hands-on component, suggest simplifying this to point to the resources table.
 
 ---
 
 ### Refine Content, Step 3: Update Resources
 
 Copilot: **Proactively suggest resources — don't just ask.** Use the Learn MCP Server to find relevant learn.microsoft.com links based on the technologies already identified in Get Started. Also look for links already mentioned in the session content.
+
+**Table format:** The Resources table has two columns: **Resource** and **Description**. The resource name in the first column must be a hyperlink to the resource. Each link must have **distinct, descriptive link text** — use the resource's actual name, not the domain (e.g., `[AI Toolkit for Visual Studio Code](https://learn.microsoft.com/windows/ai/toolkit/)`, NOT `[learn.microsoft.com](https://learn.microsoft.com/windows/ai/toolkit/)`). Every row's link text should be visually different so attendees can tell them apart.
 
 Present your suggestions: *"Here are resources I'd recommend adding to the table: [list]. Want me to add these? Are there others you'd like to include?"*
 
