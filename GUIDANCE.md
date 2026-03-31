@@ -180,7 +180,7 @@ Remember their answer — it affects later phases:
 | `docs/` folder | Optional | Optional | ✅ Keep |
 | `src/` folder | ✅ Likely needed | Optional | Optional |
 
-Based on session type, **remove sections from the README that don't apply** (e.g., remove the "🏫 Getting started in a guided session" section for Demos and Breakouts).
+Based on session type, **remove sections from the README that don't apply** (e.g., remove the "🏫 Getting started in a guided session" section for Demos and Breakouts). **Preserve the emoji prefixes on all remaining section headings.** When removing a section, do not accidentally strip the emoji from adjacent sections that you're keeping (e.g., the 🏠 on "Getting started in your own environment" must remain).
 
 **Replace generic "session" language in the README.** The template uses the word "session" throughout as a placeholder. Once you know the type, replace it with the specific term:
 - **Lab** → use "lab" (e.g., "By the end of this lab", "To get started with this lab")
