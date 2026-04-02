@@ -14,7 +14,7 @@ copyright: >
 nav:
   - Home: index.md
   - Session Topics:
-    - Developer Tools & Frameworks: frameworks.md
+    - Developer Tools & Frameworks: devtools-frameworks.md
     - Cloud Platform & Data: cloud-platform-data.md
     - Model Training: model-training.md
     - Agents & Apps: agents-apps.md
@@ -23,9 +23,9 @@ nav:
   - Skilling & Resources:
     - Azure Skilling: azure-skilling.md
     - Global Skilling: global-skilling.md
-  - Marketplace: marketplace.md
+  - Microsoft Marketplace: microsoft-marketplace.md
   - MVP: mvp.md
-  - Microsoft Build: microsoft-build.md
+  - Microsoft Build Info: microsoft-build-info.md
 
 plugins:
   - glightbox
