@@ -11,6 +11,10 @@ repo_url: https://github.com/microsoft/build26-next-steps
 copyright: >
   Copyright &copy; 2025 - present Microsoft
 
+# Exclude top-level README to avoid conflict with docs/index.md
+exclude_docs: |
+  README.md
+
 nav:
   - Home: index.md
   - Session Topics:
@@ -23,6 +27,7 @@ nav:
   - Skilling & Resources:
     - Azure Skilling: azure-skilling.md
     - Global Skilling: global-skilling.md
+    - AI Skills Fest: ai-skills-fest.md
   - Microsoft Marketplace: microsoft-marketplace.md
   - MVP: mvp.md
   - Microsoft Build Info: microsoft-build-info.md
