@@ -8,7 +8,7 @@ Microsoft Build is anchored in technical depth, developer credibility, and inter
 
 ## Session Topics
 
-Explore labs and session repositories organized by topic:
+Explore lab and session repositories organized by topic to engage in interactive activities to further your learning from Microsoft Build. Click on each topic area to see the list of sessions and their associated repos to start.
 
 | Topic | Description |
 | --- | --- |
