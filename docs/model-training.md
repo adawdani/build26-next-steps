@@ -20,6 +20,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on m
 | DEM368: Data Science & Machine Learning with Microsoft Fabric | Prashant G Bhoyar |
 | LAB520: Get Started with Models in Microsoft Foundry to Build AI Apps | Lee Stott, Aaron Powell |
 | LAB521: Improving agent behavior using reinforcement learning from traces | Bethany Jepchumba, Alicia Frame |
+
 ## Additional Resources
 
 ### Model Selection and Foundry

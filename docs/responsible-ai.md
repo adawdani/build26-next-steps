@@ -15,6 +15,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on r
 | DEM341: Any agent, any cloud: Microsoft Foundry + OpenTelemetry tracing | Hanchi Wang, SuiLin Yap |
 | DEM369: Responsible AI in Action: From Principles to Real‑World Engineering | Alexander Wachtel |
 | LAB540: Observe, optimize and protect your hosted agents in Microsoft Foundry | Nitya Narasimhan, Filisha Shah |
+
 ## Additional Resources
 
 ### AI Governance and Compliance

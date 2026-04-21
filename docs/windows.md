@@ -14,6 +14,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on t
 | DEM345: From prompt to app, build AI powered apps on Windows | Lei Xu, Nikola  Metulev |
 | DEM346: What's new in Windows Subsystem for Linux | Craig Loewen, Pooja Trivedi |
 | LAB550: Build, deploy, and scale agents with Windows 365 | Steven  Thomas, T. Robert Nishi |
+
 ## Additional Resources
 
 ### Windows Platform and Development

@@ -26,6 +26,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on f
 | LAB500: Terminal to Party: Live-Coding with GitHub Copilot CLI and Hydra | Toby Padilla, Christopher Harrison |
 | LAB501: From zero to deployed on Azure with AI agents | Yun Jung Choi, Chris Harris |
 | LAB502: Make GitHub Copilot Work Your Way: Custom Tools, Context and Workflows | Tiago Pascoal, Joshua Johanning |
+
 ## Additional Resources
 
 ### GitHub Copilot and Agentic Coding
