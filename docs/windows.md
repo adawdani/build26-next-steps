@@ -17,4 +17,17 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on t
 
 ## Additional Resources
 
-- <!-- additional resource links -->
+### Windows Platform and Development
+- [Windows development overview](https://learn.microsoft.com/windows/dev-environment/) - Modern tooling and frameworks for building Windows applications.
+- [Windows Copilot and AI integration](https://learn.microsoft.com/windows/ai/overview) - Building and integrating AI features on Windows platforms.
+- [Desktop application development with .NET](https://learn.microsoft.com/dotnet/desktop/?view=netdesktop-8.0) - WPF, WinUI 3, and other frameworks for Windows apps.
+
+### AI/ML on Windows
+- [Build AI-powered apps on Windows with Foundry](https://learn.microsoft.com/azure/ai-studio/how-to-develop-on-windows) - Local and edge AI development for Windows platforms.
+- [ONNX Runtime for inference optimization](https://learn.microsoft.com/en-us/training/modules/intro-onnx-runtime/) - Cross-platform model deployment and optimization.
+- [Windows AI with Windows.ML](https://learn.microsoft.com/windows/ai/windows-ml/) - On-device machine learning for reduced latency and privacy.
+
+### Windows Subsystem for Linux (WSL)
+- [WSL documentation and setup](https://learn.microsoft.com/windows/wsl/) - Running Linux environments natively on Windows.
+- [Develop with WSL and VS Code](https://learn.microsoft.com/windows/wsl/tutorials/wsl-vscode) - Seamless Linux development from Windows.
+- [WSL networking and performance](https://learn.microsoft.com/windows/wsl/networking) - Optimizing WSL for development workloads and container orchestration.
