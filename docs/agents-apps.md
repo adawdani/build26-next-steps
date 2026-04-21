@@ -26,6 +26,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on A
 | DEM361: Understand and fix Agent Framework apps with observability and evals | James Bennett |
 | LAB530: Engineering agents that reason, act, and adapt | Henk Boelman, Gustavo Cordido |
 | LAB532: From data to context: Agent‑ready knowledge with Foundry IQ | Ayca Bas, Pamela Fox |
+
 ## Additional Resources
 
 ### Microsoft Agents Hub

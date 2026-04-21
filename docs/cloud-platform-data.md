@@ -28,6 +28,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on c
 | LAB510: Take LLMs from prototype to production on AKS | Sertaç Özercan, Paul Yu |
 | LAB511: Create advanced Postgres-powered agentic apps with Azure HorizonDB | Jonathon Frost, Denzil Ribeiro |
 | LAB513: Build an AI app with Azure SQL Hyperscale, Microsoft Fabric, & Foundry | Matthew Calder, Someleze Diko |
+
 ## Additional Resources
 
 ### Cloud-Native Platform (AKS)
