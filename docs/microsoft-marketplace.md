@@ -26,6 +26,8 @@ Microsoft Marketplace resources and extensions to enhance your development workf
 - [GitHub Marketplace](https://github.com/marketplace) — Discover tools, Actions, and apps that extend your GitHub workflow
 - [GitHub Actions](https://github.com/marketplace?type=actions) — Automate CI/CD, testing, and deployment workflows
 
+> **Note:** Marketplace content is currently minimal and will be expanded in future updates.
+
 ## Resources
 
 - [VS Code Marketplace](https://marketplace.visualstudio.com/) — Thousands of extensions for Visual Studio Code
