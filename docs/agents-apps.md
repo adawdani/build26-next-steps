@@ -1,6 +1,6 @@
 ![Microsoft Build 2026](img/banner-build-26.png)
 
-# Agents & AI-native Apps
+# Agents & Apps
 
 Explore the labs and session repositories from Microsoft Build 2026 focused on AI agents, copilots, and intelligent AI-native applications.
 

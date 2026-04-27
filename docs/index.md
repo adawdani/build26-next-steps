@@ -12,7 +12,7 @@ Explore lab and session repositories organized by topic to engage in interactive
 
 | Topic | Description |
 | --- | --- |
-| [Agents & AI-native Apps](agents-apps.md) | Focuses on building applications and agents from a single prompt to agent framework for developers who are building for task to building for scale and doing both with security in mind. |
+| [Agents & Apps](agents-apps.md) | Focuses on building applications and agents from a single prompt to agent framework for developers who are building for task to building for scale and doing both with security in mind. |
 | [Cloud Platform & Data](cloud-platform-data.md) | Focuses on the cloud foundations developers build on — from infrastructure, to data, to platform services — that power modern applications and AI workloads. |
 | [Developer Tools & Frameworks](devtools-frameworks.md) | Focuses on using coding agents, personalizing developer workflows, reviewing and securing the new volume of code, and integrating LLM inference across a variety of open source and proprietary frameworks like Next.js, Python, .NET, Java, and more. |
 | [Working with Models](model-training.md) | For developers and data scientists looking to make AI work for them focusing on model infrastructure, fine-tuning, reinforcement training, evals, and applied science. |
