@@ -1,0 +1,1130 @@
+commit 78775b159be47b45ca1e38a141b8d08288176c34
+Author: Lee Stott <leestott@microsoft.com>
+Date:   Mon Apr 27 12:56:10 2026 +0100
+
+    Fix broken links, product names, event details, populate empty pages, add CLI and skill
+    
+    Changes:
+    - Fix README.md broken links (frameworks.md -> devtools-frameworks.md, microsoft-build.md -> microsoft-build-info.md)
+    - Add AI Skills Fest to README.md skilling section
+    - Update Azure AI Foundry -> Microsoft Foundry across all docs
+    - Update Azure Machine Learning -> Microsoft Foundry in model-training.md
+    - Fix foundry-classic URL to foundry in agents-apps.md
+    - Fix Build 2026 location (Seattle -> San Francisco) and dates (June 2-4 -> June 2-3)
+    - Fix social media links in microsoft-build-info.md to match build.microsoft.com
+    - Add Lightning Talk session type
+    - Populate azure-skilling.md with learning paths and certifications
+    - Populate global-skilling.md with worldwide programs
+    - Populate ai-skills-fest.md with challenge info and learning paths
+    - Populate microsoft-marketplace.md with VS Code, Azure, GitHub extensions
+    - Populate mvp.md with MVP program resources
+    - Populate microsoft-build-info.md with event details and links
+    - Add build-companion SKILL.md with 6 workflows (find sessions, what's new, scaffold, journal, next steps, session details)
+    - Add msevents CLI scaffolding (TypeScript, ~300 lines, event-agnostic session catalog tool)
+
+diff --git a/.github/skills/build-companion/SKILL.md b/.github/skills/build-companion/SKILL.md
+new file mode 100644
+index 0000000..3af63df
+--- /dev/null
++++ b/.github/skills/build-companion/SKILL.md
+@@ -0,0 +1,238 @@
++# Build Companion Skill
++
++> Microsoft Build 2026 — Conference as CLI
++
++You are a Microsoft Build 2026 companion agent. You help developers interact with Build sessions, discover relevant content for their tech stack, scaffold projects from sessions, journal notes, and plan next steps — all from their terminal.
++
++## Data Source
++
++Use the `msevents` CLI to query the Build 2026 session catalog. The CLI is available via npx:
++
++```
++npx @microsoft/msevents search "<query>"
++npx @microsoft/msevents get "<sessionId>"
++npx @microsoft/msevents tech "<technology>"
++```
++
++### Fallback Chain
++
++1. **CLI via npx** — preferred; fast local caching, offline access
++2. **HTTP fetch** — if Node.js is not available, fetch the session catalog JSON directly from the Build website endpoint: `https://build.microsoft.com/api/sessions`
++
++Always try the CLI first. If it fails (e.g., Node.js not installed), fall back to HTTP fetch automatically. Do not ask the user to install Node.js.
++
++---
++
++## Workflows
++
++### 1. Find Sessions
++
++**Trigger:** User asks to find sessions, build a schedule, discover talks, or says "what sessions should I attend?"
++
++**Steps:**
++1. Scan the user's current project directory for dependency files: `package.json`, `requirements.txt`, `.csproj`, `go.mod`, `Cargo.toml`, `Dockerfile`, `docker-compose.yml`, `pom.xml`, `build.gradle`
++2. Extract the tech stack: languages, frameworks, SDKs, cloud services
++3. Query the session catalog using `msevents tech "<technology>"` for each major technology found
++4. Cross-reference results and rank by relevance to the user's stack
++5. Present a personalized schedule with:
++   - Session ID, title, and type (BRK/DEM/LAB)
++   - Why it's relevant to their project
++   - Time slot (if available)
++   - Direct link to the session page
++
++**Output format:**
++```
++## Recommended Sessions for Your Stack
++
++Based on your project (Node.js, Azure Functions, Cosmos DB):
++
++1. **BRK223** — From rows to reasoning: Designing databases for AI apps and agents
++   📌 Relevant: You use Cosmos DB in /api/data
++   🔗 https://build.microsoft.com/sessions/BRK223
++
++2. **LAB511** — Create advanced Postgres-powered agentic apps with Azure HorizonDB
++   📌 Relevant: Your requirements.txt includes psycopg2
++   🔗 https://build.microsoft.com/sessions/LAB511
++```
++
++---
++
++### 2. What's New (Build-Diff)
++
++**Trigger:** User asks "what's new for my project?", "what changed at Build?", "build diff", or "what announcements matter for my code?"
++
++**Steps:**
++1. Scan the user's current project for dependency files (same as Find Sessions)
++2. Extract exact package names and versions
++3. Query the session catalog for sessions matching each dependency
++4. For each match, explain specifically how the announcement affects THEIR code
++5. Offer to create an upgrade branch with updated dependencies
++
++**Output format:**
++```
++## What's New at Build for Your Stack
++
++Scanning: package.json, tsconfig.json, Dockerfile
++Stack: Node 20, TypeScript, Azure Functions v4, Cosmos DB
++
++### @azure/cosmos
++- New vector search API replaces your workaround in /api/search
++- Native embedding support announced in BRK223
++- Confidence: High
++
++### @azure/functions
++- V4 streaming support + Durable Functions v3
++- Your queue trigger can now stream responses
++- Session: BRK221 — Confidence: High
++
++Create upgrade branch with new APIs? (y/n)
++```
++
++---
++
++### 3. Scaffold
++
++**Trigger:** User asks to scaffold a project from a session, says "I want to build what I just saw", or "scaffold BRK___"
++
++**Steps:**
++1. Look up the session by ID using `msevents get "<sessionId>"`
++2. Get the full session metadata: title, description, speakers, technologies, code samples
++3. Detect the user's preferred language/framework (from their current project or ask)
++4. Generate a working starter project with:
++   - Correct, up-to-date dependencies from the session's announced SDKs
++   - Boilerplate source code based on the session's demo patterns
++   - `.env.example` with required configuration variables (placeholder values only)
++   - `README.md` linking back to the session recording and slides
++   - GitHub Issues for suggested next steps
++5. Adapt the scaffold to the user's detected language (TypeScript, Python, C#, Java)
++
++**Output format:**
++```
++Scaffolded: ai-agent-cosmos-starter/
++├── package.json      @azure/cosmos ^4.2, @azure/functions ^4.5
++├── src/agent.ts      Agent boilerplate from demo
++├── src/search.ts     Vector search setup from session
++├── .env.example      COSMOS_ENDPOINT, OPENAI_KEY
++└── README.md         Links to BRK223 recording + slides
++
++Next steps (from related sessions):
++1. Add eval framework (DEM361)
++2. Deploy to Azure Container Apps (BRK221)
++
++Open in VS Code? (y/n)
++```
++
++---
++
++### 4. Journal
++
++**Trigger:** User says "journal", "/journal", "take notes", or "journal BRK___"
++
++**Steps:**
++1. If a session ID is provided, look it up via `msevents get "<sessionId>"`
++2. Create or append to `build-journal.md` in the user's project root
++3. Add a timestamped entry with:
++   - Session ID and title (from catalog)
++   - Speaker names
++   - User's notes (from their message)
++   - Auto-extracted action items (lines starting with "TODO", "try", "test", "check")
++   - Related sessions (from catalog metadata)
++4. If the user continues sending messages in journal context, append to the same session entry
++
++**Output format in build-journal.md:**
++```markdown
++## BRK223 — From rows to reasoning: Designing databases for AI apps
++📅 2026-06-02 10:30 AM | 👤 Charles Feddersen, Abe Omorogbe
++
++### Notes
++- Vector search now native in Cosmos DB — no workarounds needed
++- New embedding API reduces latency by 3x
++
++### Action Items
++- [ ] Try new vector search API in /api/search endpoint
++- [ ] Test embedding API against production data
++
++### Related Sessions
++- BRK224: Thirsty for more data (Cosmos DB patterns)
++- LAB511: Advanced Postgres agentic apps
++```
++
++---
++
++### 5. Next Steps
++
++**Trigger:** User asks "what should I do next?", "what's after this session?", "next steps for BRK___", or "I just finished a session"
++
++**Steps:**
++1. If a session ID is provided, look it up; otherwise check the journal for the most recent session
++2. Find related sessions from the catalog (same track, shared technologies, follow-up content)
++3. Find relevant Microsoft Learn modules and documentation
++4. Suggest a learning sequence: what to watch next → what to try → what to build
++5. If between sessions, suggest time-appropriate activities (short challenge, scaffold, or build-diff)
++
++**Output format:**
++```
++## Next Steps after BRK223
++
++### Watch Next
++1. **BRK224** — Thirsty for more data: how Pepsi refreshed for agentic apps
++   Builds on the Cosmos DB patterns you just learned
++   ⏰ Starts in 45 min
++
++2. **DEM310** — Ship code faster with AI-powered NoSQL schema design
++   Directly applies to your project's data layer
++   ⏰ Starts in 2 hours
++
++### Try Now (between sessions)
++- Scaffold a project from BRK223: `scaffold BRK223`
++- Run build-diff on your project to see what applies
++
++### Learn More
++- [AI agents in Azure Cosmos DB](https://learn.microsoft.com/azure/cosmos-db/ai-agents)
++- [Vector search with Cosmos DB](https://learn.microsoft.com/azure/cosmos-db/vector-search)
++```
++
++---
++
++### 6. Session Details
++
++**Trigger:** User asks about a specific session, says "tell me about BRK___", or "session details"
++
++**Steps:**
++1. Look up the session by ID or search by title/topic
++2. Return full session metadata: title, abstract, speakers, time, track, level, technologies
++3. Include links to related resources, code samples, and companion repos
++
++**Output format:**
++```
++## BRK223 — From rows to reasoning: Designing databases for AI apps and agents
++
++| | |
++|---|---|
++| **Type** | Breakout Session |
++| **Speakers** | Charles Feddersen, Abe Omorogbe |
++| **Track** | Cloud Platform & Data |
++| **Technologies** | Azure Cosmos DB, Azure SQL, PostgreSQL, Vector Search |
++
++### Abstract
++Learn how to design your database layer for AI-native applications and agents...
++
++### Resources
++- 🔗 [Session page](https://build.microsoft.com/sessions/BRK223)
++- 📦 [Code samples](https://github.com/microsoft/build26-next-steps)
++- 📚 [Azure Cosmos DB docs](https://learn.microsoft.com/azure/cosmos-db/)
++
++### Related Sessions
++- BRK224, DEM310, LAB511, LAB513
++```
++
++---
++
++## General Guidelines
++
++- Always be specific to the user's actual project and tech stack when possible
++- Use session IDs (BRK/DEM/LAB + number) as the canonical reference
++- Link to Microsoft Learn documentation, not generic web results
++- When scaffolding, never include real API keys — always use `.env.example` with placeholders
++- Keep journal entries structured and actionable
++- If the session catalog is unavailable, inform the user and suggest checking https://build.microsoft.com
+diff --git a/README.md b/README.md
+index b624fc3..a4322c2 100644
+--- a/README.md
++++ b/README.md
+@@ -10,7 +10,7 @@ Microsoft Build is anchored in technical depth, developer credibility, and inter
+ 
+ ## Session Topics
+ 
+-- **[Developer Tools & Frameworks](docs/frameworks.md)** — Focuses on using coding agents, personalizing developer workflows, reviewing and securing the new volume of code, and integrating LLM inference across a variety of open source and proprietary frameworks like Next.js, Python, .NET, Java, and more.
++- **[Developer Tools & Frameworks](docs/devtools-frameworks.md)** — Focuses on using coding agents, personalizing developer workflows, reviewing and securing the new volume of code, and integrating LLM inference across a variety of open source and proprietary frameworks like Next.js, Python, .NET, Java, and more.
+ - **[Cloud Platform & Data](docs/cloud-platform-data.md)** — Focuses on the cloud foundations developers build on — from infrastructure, to data, to platform services — that power modern applications and AI workloads.
+ - **[Model Training](docs/model-training.md)** — For developers and data scientists looking to make AI work for them focusing on fine-tuning, reinforcement training, evals, PyTorch, TensorFlow, and more.
+ - **[Agents & Apps](docs/agents-apps.md)** — Focuses on building applications and agents from a single prompt to agent framework for developers who are building for task to building for scale and doing both with security in mind.
+@@ -21,9 +21,10 @@ Microsoft Build is anchored in technical depth, developer credibility, and inter
+ 
+ - [Azure Skilling](docs/azure-skilling.md) — Azure-focused learning plans
+ - [Global Skilling](docs/global-skilling.md) — Worldwide skilling programs
++- [AI Skills Fest](docs/ai-skills-fest.md) — AI Skills Fest learning programs and resources
+ - [Microsoft Marketplace](docs/microsoft-marketplace.md) — Microsoft Marketplace resources and extensions
+ - [MVP](docs/mvp.md) — Microsoft MVP community resources
+-- [Microsoft Build](docs/microsoft-build.md) — Event information and links
++- [Microsoft Build Info](docs/microsoft-build-info.md) — Event information and links
+ 
+ ## Contributing
+ 
+diff --git a/docs/agents-apps.md b/docs/agents-apps.md
+index fdf181f..8e2e3f3 100644
+--- a/docs/agents-apps.md
++++ b/docs/agents-apps.md
+@@ -35,7 +35,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on A
+ ### Microsoft Foundry
+ - [What is Microsoft Foundry Agent Service?](https://learn.microsoft.com/azure/foundry/agents/overview) — Overview and key capabilities of Foundry for building, testing, and deploying agents
+ - [Agent development lifecycle](https://learn.microsoft.com/azure/foundry/agents/concepts/development-lifecycle) — End-to-end lifecycle from creation through production monitoring
+-- [Build collaborative, multi-agent systems with Connected Agents](https://learn.microsoft.com/azure/foundry-classic/agents/how-to/connected-agents) — Example patterns and implementation for multi-agent systems
++- [Build collaborative, multi-agent systems with Connected Agents](https://learn.microsoft.com/azure/foundry/agents/how-to/connected-agents) — Example patterns and implementation for multi-agent systems
+ - [Agent identity concepts in Microsoft Foundry](https://learn.microsoft.com/azure/foundry/agents/concepts/agent-identity) — Identity and security management for agents
+ 
+ ### Copilot Studio
+diff --git a/docs/ai-skills-fest.md b/docs/ai-skills-fest.md
+index 2c5b20f..011ee2c 100644
+--- a/docs/ai-skills-fest.md
++++ b/docs/ai-skills-fest.md
+@@ -4,6 +4,36 @@
+ 
+ AI Skills Fest learning programs and resources from Microsoft Build 2026.
+ 
++## What is AI Skills Fest?
++
++AI Skills Fest is a free, global learning event that helps developers, IT professionals, and data scientists build practical AI skills through hands-on challenges and guided learning paths.
++
++## Learning Challenges
++
++### Azure AI & Foundry
++- [Build intelligent apps with Azure AI services](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/) — Hands-on path for building AI applications with Microsoft Foundry
++- [Get started with Azure OpenAI Service](https://learn.microsoft.com/training/modules/get-started-openai/) — Core concepts and first projects with Azure OpenAI
++
++### GitHub Copilot
++- [Introduction to GitHub Copilot](https://learn.microsoft.com/training/modules/introduction-to-github-copilot/) — Learn how to use GitHub Copilot to accelerate your development
++- [Accelerate app development by using GitHub Copilot](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/) — Intermediate workflows and agent mode patterns
++
++### Agents & Automation
++- [Develop AI agents using Azure OpenAI and Semantic Kernel](https://learn.microsoft.com/training/paths/develop-ai-agents-azure-open-ai-semantic-kernel-sdk/) — Build intelligent agents that reason, plan, and act
++- [Microsoft Copilot Studio](https://learn.microsoft.com/training/paths/work-power-virtual-agents/) — Low-code agent development for business scenarios
++
++### Responsible AI
++- [Responsible AI principles and practices](https://learn.microsoft.com/training/paths/responsible-ai-business-principles/) — Build AI systems that are fair, reliable, and transparent
++
++## How to Participate
++
++1. Visit [AI Skills Fest](https://aiskillsfest.com) for the latest challenge schedule
++2. Choose a learning path that matches your interests and skill level
++3. Complete the challenges and earn digital badges
++4. Share your progress with the community
++
+ ## Additional Resources
+ 
+-- <!-- additional resource links -->
++- [AI Skills Fest](https://aiskillsfest.com) — Official AI Skills Fest event site
++- [Microsoft Learn AI Hub](https://learn.microsoft.com/ai/) — Central AI learning resource
++- [Azure AI documentation](https://learn.microsoft.com/azure/ai-services/) — Comprehensive AI service documentation
+diff --git a/docs/azure-skilling.md b/docs/azure-skilling.md
+index 0c8ef13..0ee17fd 100644
+--- a/docs/azure-skilling.md
++++ b/docs/azure-skilling.md
+@@ -2,8 +2,42 @@
+ 
+ # Azure Skilling
+ 
+-Azure-focused learning plans and skilling resources from Microsoft Build 2026.
++Azure-focused learning plans and skilling resources to continue your Microsoft Build 2026 journey.
++
++## Learning Paths
++
++### Getting Started with Azure
++- [Azure Fundamentals (AZ-900)](https://learn.microsoft.com/training/paths/az-900-describe-cloud-concepts/) — Cloud concepts, Azure services, security, privacy, and pricing
++- [Azure AI Fundamentals (AI-900)](https://learn.microsoft.com/training/paths/get-started-with-artificial-intelligence-on-azure/) — Core AI and machine learning concepts on Azure
++- [Azure Developer Associate (AZ-204)](https://learn.microsoft.com/training/paths/create-azure-app-service-web-apps/) — Build, test, and deploy applications on Azure
++
++### AI & Agents
++- [Build AI apps and agents with Microsoft Foundry](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/) — End-to-end AI application development
++- [Develop AI agents using Azure OpenAI and Semantic Kernel](https://learn.microsoft.com/training/paths/develop-ai-agents-azure-open-ai-semantic-kernel-sdk/) — Agent development patterns and frameworks
++- [Microsoft Copilot development](https://learn.microsoft.com/training/browse/?terms=copilot) — Build and extend Copilot experiences
++
++### Cloud-Native Development
++- [Azure Kubernetes Service (AKS)](https://learn.microsoft.com/training/paths/intro-to-kubernetes-on-azure/) — Deploy and manage containerized applications
++- [Azure Container Apps](https://learn.microsoft.com/training/paths/deploy-cloud-native-applications-to-azure-container-apps/) — Serverless container hosting
++- [.NET Aspire for cloud-native apps](https://learn.microsoft.com/training/paths/dotnet-aspire/) — Build distributed .NET applications
++
++### Data & Analytics
++- [Azure SQL for developers](https://learn.microsoft.com/training/paths/azure-sql-fundamentals/) — Relational database development on Azure
++- [Azure Cosmos DB developer](https://learn.microsoft.com/training/paths/build-dotnet-applications-with-azure-cosmos-db/) — NoSQL database for modern applications
++- [Microsoft Fabric analytics](https://learn.microsoft.com/training/paths/get-started-fabric/) — End-to-end analytics platform
++
++## Certifications
++
++| Certification | Level | Focus |
++| --- | --- | --- |
++| [AZ-900: Azure Fundamentals](https://learn.microsoft.com/credentials/certifications/azure-fundamentals/) | Beginner | Cloud concepts and Azure services |
++| [AI-900: Azure AI Fundamentals](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/) | Beginner | AI and machine learning on Azure |
++| [AZ-204: Azure Developer Associate](https://learn.microsoft.com/credentials/certifications/azure-developer/) | Intermediate | App development on Azure |
++| [AI-102: Azure AI Engineer Associate](https://learn.microsoft.com/credentials/certifications/azure-ai-engineer/) | Intermediate | Building AI solutions |
++| [AZ-305: Azure Solutions Architect Expert](https://learn.microsoft.com/credentials/certifications/azure-solutions-architect/) | Advanced | Designing Azure solutions |
+ 
+ ## Additional Resources
+ 
+-- <!-- additional resource links -->
++- [Microsoft Learn](https://learn.microsoft.com/) — Free, self-paced technical learning platform
++- [Azure Developer Center](https://azure.microsoft.com/develop/) — Tools, SDKs, and resources for Azure developers
++- [Azure Architecture Center](https://learn.microsoft.com/azure/architecture/) — Reference architectures and best practices
+diff --git a/docs/cloud-platform-data.md b/docs/cloud-platform-data.md
+index e40bf67..da7ebce 100644
+--- a/docs/cloud-platform-data.md
++++ b/docs/cloud-platform-data.md
+@@ -44,7 +44,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on c
+ 
+ ### Databases for AI Apps and Agents
+ - [Intelligent applications and AI in Azure SQL Database](https://learn.microsoft.com/azure/azure-sql/database/ai-artificial-intelligence-intelligent-applications?view=azuresql) - Patterns for RAG, vector search, and AI-integrated application design.
+-- [AI agents in Azure Database for PostgreSQL](https://learn.microsoft.com/azure/postgresql/azure-ai/generative-ai-agents) - Build agent workflows with PostgreSQL vector capabilities and Foundry Agent Service.
++- [AI agents in Azure Database for PostgreSQL](https://learn.microsoft.com/azure/postgresql/azure-ai/generative-ai-agents) - Build agent workflows with PostgreSQL vector capabilities and Microsoft Foundry Agent Service.
+ - [Semantic search with Azure Database for PostgreSQL and Azure OpenAI](https://learn.microsoft.com/azure/postgresql/azure-ai/generative-ai-semantic-search) - Hands-on tutorial for semantic retrieval over Postgres data.
+ - [AI agents in Azure Cosmos DB](https://learn.microsoft.com/azure/cosmos-db/ai-agents) - Design guidance for agent memory, vector search, and globally distributed NoSQL workloads.
+ - [Azure Cosmos DB integrations for AI applications](https://learn.microsoft.com/azure/cosmos-db/gen-ai/integrations) - Semantic Kernel, LangChain, LlamaIndex, and related integration references.
+diff --git a/docs/global-skilling.md b/docs/global-skilling.md
+index 9b09454..5170fa8 100644
+--- a/docs/global-skilling.md
++++ b/docs/global-skilling.md
+@@ -4,6 +4,29 @@
+ 
+ Worldwide skilling programs and learning paths from Microsoft Build 2026.
+ 
++## Regional Learning Programs
++
++### Microsoft Learn
++- [Microsoft Learn](https://learn.microsoft.com/) — Free, interactive, hands-on training across all Microsoft technologies
++- [Microsoft Learn for Organizations](https://learn.microsoft.com/training/organizations/) — Enterprise skilling programs and team learning paths
++- [Microsoft Learn Student Hub](https://learn.microsoft.com/training/student-hub/) — Resources and learning paths for students
++
++### Cloud Skills Challenges
++- [30 Days to Learn It](https://developer.microsoft.com/offers/30-days-to-learn-it) — Self-paced challenges across Azure, Microsoft 365, Power Platform, and more
++- [Applied Skills credentials](https://learn.microsoft.com/credentials/browse/?credential_types=applied%20skills) — Scenario-based assessments that validate practical skills
++
++### Community-Led Learning
++- [Microsoft Reactor](https://developer.microsoft.com/reactor/) — Free, in-person and virtual workshops hosted worldwide
++- [Microsoft Tech Community](https://techcommunity.microsoft.com/) — Forums, blogs, and discussions with peers and Microsoft experts
++- [Microsoft User Groups](https://developer.microsoft.com/community/user-groups/) — Local developer communities around the world
++
++## Localized Resources
++
++- [Microsoft Learn — Language support](https://learn.microsoft.com/locale/) — Training content available in 20+ languages
++- [Microsoft Regional Developer Centers](https://developer.microsoft.com/) — Regional events, hackathons, and learning programs
++
+ ## Additional Resources
+ 
+-- <!-- additional resource links -->
++- [GitHub Education](https://education.github.com/) — Free developer tools for students and educators
++- [Microsoft Imagine Academy](https://www.microsoft.com/education/imagine-academy) — Technology education programs for academic institutions
++- [LinkedIn Learning](https://www.linkedin.com/learning/) — Professional development courses with Microsoft technology content
+diff --git a/docs/microsoft-build-info.md b/docs/microsoft-build-info.md
+index c0825a7..409cda9 100644
+--- a/docs/microsoft-build-info.md
++++ b/docs/microsoft-build-info.md
+@@ -2,8 +2,41 @@
+ 
+ # Microsoft Build
+ 
+-Microsoft Build event information and links.
++Microsoft Build 2026 event information and links.
++
++## Event Details
++
++| | |
++| --- | --- |
++| **Event** | [Microsoft Build 2026](https://build.microsoft.com) |
++| **Dates** | June 2–3, 2026 |
++| **Location** | San Francisco, CA + Online |
++| **Format** | In-person and online |
++
++## Key Links
++
++- [Microsoft Build 2026](https://build.microsoft.com) — Official event site and registration
++- [Session Catalog](https://build.microsoft.com/sessions) — Browse all sessions, labs, and demos
++- [Speakers](https://build.microsoft.com/speakers) — View the full speaker lineup
++- [Build 2026 Book of News](https://news.microsoft.com/build-2026/) — All product announcements in one place
++
++## Session Types
++
++| Type | Code | Description |
++| --- | --- | --- |
++| Breakout Session | BRK | In-depth technical sessions with demos and deep dives |
++| Demo | DEM | Focused demonstrations of new features and capabilities |
++| Lab | LAB | Hands-on, instructor-led coding sessions |
++| Lightning Talk | LT | 15-minute developer-led discussions in mini theaters (in-person only) |
++
++## Stay Connected
++
++- [Microsoft Developers on LinkedIn](https://www.linkedin.com/showcase/microsoft-developers/) — Professional network updates
++- [Microsoft Developers on X](https://x.com/msdev) — Live updates and developer news
++- [Microsoft Developer on Instagram](https://www.instagram.com/microsoftdeveloper/) — Visual content and event highlights
++- [Microsoft Developer YouTube](https://www.youtube.com/@events_msft) — Session recordings and developer content
+ 
+ ## Resources
+ 
+-- <!-- event resource links -->
++- [Microsoft Build 2025 recordings](https://build.microsoft.com/sessions) — Watch sessions from previous years
++- [Microsoft Developer Center](https://developer.microsoft.com/) — Central hub for developer tools and resources
+diff --git a/docs/microsoft-marketplace.md b/docs/microsoft-marketplace.md
+index 7374454..9b5ef19 100644
+--- a/docs/microsoft-marketplace.md
++++ b/docs/microsoft-marketplace.md
+@@ -2,8 +2,33 @@
+ 
+ # Microsoft Marketplace
+ 
+-Microsoft Marketplace resources and extensions from Microsoft Build 2026.
++Microsoft Marketplace resources and extensions to enhance your development workflow.
++
++## Visual Studio Code Extensions
++
++| Extension | Description |
++| --- | --- |
++| [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) | AI pair programmer that helps you write code faster |
++| [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) | Conversational AI assistant for coding questions and tasks |
++| [Azure Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) | Comprehensive Azure development tools for VS Code |
++| [Azure AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) | Develop, test, and deploy AI models locally and to Azure |
++| [.NET Aspire](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-aspire) | Cloud-native app orchestration and development |
++| [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Python language support with IntelliSense and debugging |
++| [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) | Modern C# development experience |
++
++## Azure Marketplace
++
++- [Azure Marketplace](https://azuremarketplace.microsoft.com/) — Discover and deploy cloud solutions, SaaS apps, and services
++- [Azure Marketplace for developers](https://learn.microsoft.com/marketplace/azure-marketplace-overview) — Publish and monetize your applications on Azure Marketplace
++
++## GitHub Marketplace
++
++- [GitHub Marketplace](https://github.com/marketplace) — Discover tools, Actions, and apps that extend your GitHub workflow
++- [GitHub Actions](https://github.com/marketplace?type=actions) — Automate CI/CD, testing, and deployment workflows
+ 
+ ## Resources
+ 
+-- <!-- marketplace resource links -->
++- [VS Code Marketplace](https://marketplace.visualstudio.com/) — Thousands of extensions for Visual Studio Code
++- [Visual Studio Marketplace](https://marketplace.visualstudio.com/vs) — Extensions for Visual Studio IDE
++- [NuGet Gallery](https://www.nuget.org/) — .NET package manager and gallery
++- [npm registry](https://www.npmjs.com/) — JavaScript and TypeScript package registry
+diff --git a/docs/model-training.md b/docs/model-training.md
+index 2902711..410d93f 100644
+--- a/docs/model-training.md
++++ b/docs/model-training.md
+@@ -24,18 +24,18 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on m
+ ## Additional Resources
+ 
+ ### Model Selection and Foundry
+-- [Microsoft Foundry documentation](https://learn.microsoft.com/azure/machine-learning/concept-foundation-models) - Overview of foundation models and model deployment in Azure ML.
+-- [What is Azure Machine Learning?](https://learn.microsoft.com/azure/machine-learning/overview-what-is-azure-ml) - Platform capabilities for training, deploying, and managing AI models.
+-- [Train and deploy models with Azure Machine Learning](https://learn.microsoft.com/training/paths/train-deploy-models-azure-machine-learning/) - Hands-on learning path for ML workflows in Azure.
++- [Microsoft Foundry documentation](https://learn.microsoft.com/azure/machine-learning/concept-foundation-models) - Overview of foundation models and model deployment in Microsoft Foundry.
++- [What is Microsoft Foundry?](https://learn.microsoft.com/azure/machine-learning/overview-what-is-azure-ml) - Platform capabilities for training, deploying, and managing AI models.
++- [Train and deploy models with Microsoft Foundry](https://learn.microsoft.com/training/paths/train-deploy-models-azure-machine-learning/) - Hands-on learning path for ML workflows in Azure.
+ 
+ ### Fine-Tuning and Custom Models
+-- [Fine-tune language models in Azure Machine Learning](https://learn.microsoft.com/azure/machine-learning/how-to-fine-tune-llm-models) - Practical guidance for adapting foundation models to specialized tasks.
++- [Fine-tune language models in Microsoft Foundry](https://learn.microsoft.com/azure/machine-learning/how-to-fine-tune-llm-models) - Practical guidance for adapting foundation models to specialized tasks.
+ - [Responsible AI best practices for fine-tuning](https://learn.microsoft.com/azure/machine-learning/responsible-ai-fine-tuning) - Bias mitigation and responsible model adaptation strategies.
+ - [Model distillation and optimization](https://learn.microsoft.com/dotnet/machine-learning/how-to-use-model-distillation) - Techniques for creating smaller, faster models for edge and inference.
+ 
+ ### Reinforcement Learning and Agent Training
+ - [Reinforcement learning concepts and patterns](https://learn.microsoft.com/ai/foundational-concepts-reinforcement-learning) - Core RL theory and practical agent design patterns.
+-- [Training agents with Azure Machine Learning](https://learn.microsoft.com/azure/machine-learning/how-to-train-reinforcement-learning-agent) - End-to-end RL training pipeline setup and orchestration.
++- [Training agents with Microsoft Foundry](https://learn.microsoft.com/azure/machine-learning/how-to-train-reinforcement-learning-agent) - End-to-end RL training pipeline setup and orchestration.
+ - [Evaluating and improving agent behavior](https://learn.microsoft.com/ai/ai-agents/concepts/agent-evaluation-and-optimization) - Monitoring, tracing, and continuous improvement for production agents.
+ 
+ ### MLOps and Model Deployment
+diff --git a/docs/mvp.md b/docs/mvp.md
+index f649f80..a0d51ae 100644
+--- a/docs/mvp.md
++++ b/docs/mvp.md
+@@ -2,8 +2,31 @@
+ 
+ # MVP
+ 
+-Microsoft MVP community resources from Microsoft Build 2026.
++Microsoft Most Valuable Professional (MVP) community resources from Microsoft Build 2026.
++
++## About the MVP Program
++
++The [Microsoft MVP Award](https://mvp.microsoft.com/) recognizes exceptional community leaders who actively share their technical expertise and real-world knowledge with others.
++
++## Get Involved
++
++### For Aspiring MVPs
++- [MVP Award Overview](https://mvp.microsoft.com/mvp) — Learn about the program and nomination process
++- [Community contribution areas](https://mvp.microsoft.com/mvp/nominate) — How to demonstrate impact and get nominated
++- [Microsoft Tech Community](https://techcommunity.microsoft.com/) — Share your expertise and engage with the community
++
++### For Current MVPs
++- [MVP Resources Portal](https://mvp.microsoft.com/) — Access exclusive content, previews, and direct channels to product teams
++- [MVP Global Summit](https://mvp.microsoft.com/summit) — Annual summit for MVPs to connect with Microsoft engineering teams
++
++## Community Engagement
++
++- [Microsoft Reactor](https://developer.microsoft.com/reactor/) — In-person and virtual community events hosted worldwide
++- [Microsoft User Groups](https://developer.microsoft.com/community/user-groups/) — Find local developer communities
++- [Microsoft Learn Student Ambassadors](https://studentambassadors.microsoft.com/) — Student community program for future tech leaders
++- [GitHub Community](https://github.com/community) — Open-source collaboration and community discussions
+ 
+ ## Resources
+ 
+-- <!-- MVP resource links -->
++- [MVP blog](https://techcommunity.microsoft.com/category/mvp/blog/mvpawardblog) — Latest news and stories from the MVP community
++- [Microsoft Regional Directors](https://rd.microsoft.com/) — Strategic advisors who provide insights to Microsoft
+diff --git a/docs/responsible-ai.md b/docs/responsible-ai.md
+index 07ba62d..1936f1c 100644
+--- a/docs/responsible-ai.md
++++ b/docs/responsible-ai.md
+@@ -29,6 +29,6 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on r
+ - [AI safety and abuse prevention](https://learn.microsoft.com/azure/openai/concepts/abuse-monitoring) - Safeguards for production AI applications.
+ 
+ ### Frameworks and Integration
+-- [Azure AI Foundry tools and integrations](https://learn.microsoft.com/azure/ai-studio/how-to/tools-overview) - End-to-end tooling for building and monitoring responsible AI systems.
++- [Microsoft Foundry tools and integrations](https://learn.microsoft.com/azure/ai-studio/how-to/tools-overview) - End-to-end tooling for building and monitoring responsible AI systems.
+ - [OpenTelemetry for AI applications](https://learn.microsoft.com/azure/azure-monitor/app/opentelemetry-overview) - Standard observability instrumentation for AI/ML workloads.
+ - [Enterprise AI governance and deployment](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/industry/ai-governance) - Scaling AI responsibly across organizations.
+diff --git a/docs/windows.md b/docs/windows.md
+index f2b6237..eabe962 100644
+--- a/docs/windows.md
++++ b/docs/windows.md
+@@ -23,7 +23,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on t
+ - [Desktop application development with .NET](https://learn.microsoft.com/dotnet/desktop/?view=netdesktop-8.0) - WPF, WinUI 3, and other frameworks for Windows apps.
+ 
+ ### AI/ML on Windows
+-- [Build AI-powered apps on Windows with Foundry](https://learn.microsoft.com/azure/ai-studio/how-to-develop-on-windows) - Local and edge AI development for Windows platforms.
++- [Build AI-powered apps on Windows with Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to-develop-on-windows) - Local and edge AI development for Windows platforms.
+ - [ONNX Runtime for inference optimization](https://learn.microsoft.com/en-us/training/modules/intro-onnx-runtime/) - Cross-platform model deployment and optimization.
+ - [Windows AI with Windows.ML](https://learn.microsoft.com/windows/ai/windows-ml/) - On-device machine learning for reduced latency and privacy.
+ 
+diff --git a/src/cli/README.md b/src/cli/README.md
+new file mode 100644
+index 0000000..d1023d6
+--- /dev/null
++++ b/src/cli/README.md
+@@ -0,0 +1,61 @@
++# msevents CLI
++
++Lightweight command-line tool for querying Microsoft event session catalogs (Build, Ignite, and more).
++
++## Overview
++
++`msevents` parses a session catalog JSON file, caches it locally, and provides fast keyword search, technology search, and session lookup. It's designed to be used by the `build-companion` skill in GitHub Copilot CLI.
++
++## Usage
++
++```bash
++# Search sessions by keyword
++npx @microsoft/msevents search "AI agents"
++
++# Find sessions by technology
++npx @microsoft/msevents tech "cosmos db"
++
++# Get full details for a session
++npx @microsoft/msevents get BRK223
++
++# Search by speaker
++npx @microsoft/msevents speakers "Pamela Fox"
++
++# List all sessions (optionally filter by type)
++npx @microsoft/msevents list --type LAB
++
++# Force-refresh the local cache
++npx @microsoft/msevents refresh
++```
++
++## How It Works
++
++1. On first run, fetches the session catalog JSON from the Build website
++2. Caches the data locally in `~/.msevents/catalog.json` (4-hour TTL)
++3. Subsequent searches are instant (local JSON search)
++4. If the network is unavailable, falls back to stale cache
++
++## Data Source
++
++The CLI reads the same session catalog JSON that the Build website publishes. No custom backend or API required.
++
++You can override the catalog URL:
++
++```bash
++MSEVENTS_CATALOG_URL=https://example.com/sessions.json npx @microsoft/msevents search "kubernetes"
++```
++
++## Development
++
++```bash
++cd src/cli
++npm install
++npm run build
++node dist/index.js search "AI agents"
++```
++
++## Architecture
++
++This CLI is **event-agnostic** — it works with any Microsoft event catalog that follows the JSON schema. For Build 2026, the `build-companion` skill points it at the Build catalog. For Ignite, a separate `ignite-companion` skill would use the same CLI with a different catalog URL.
++
++**Total footprint:** ~300 lines of TypeScript with zero external runtime dependencies.
+diff --git a/src/cli/package.json b/src/cli/package.json
+new file mode 100644
+index 0000000..2d05529
+--- /dev/null
++++ b/src/cli/package.json
+@@ -0,0 +1,37 @@
++{
++  "name": "@microsoft/msevents",
++  "version": "0.1.0",
++  "description": "Lightweight CLI for querying Microsoft event session catalogs (Build, Ignite). Parses session JSON, provides keyword/tech search, and caches locally.",
++  "main": "dist/index.js",
++  "bin": {
++    "msevents": "dist/index.js"
++  },
++  "scripts": {
++    "build": "tsc",
++    "start": "node dist/index.js",
++    "dev": "ts-node src/index.ts",
++    "lint": "eslint src/",
++    "test": "jest"
++  },
++  "keywords": [
++    "microsoft",
++    "build",
++    "ignite",
++    "conference",
++    "cli",
++    "sessions",
++    "copilot"
++  ],
++  "author": "Microsoft",
++  "license": "MIT",
++  "devDependencies": {
++    "@types/node": "^20.0.0",
++    "typescript": "^5.5.0"
++  },
++  "engines": {
++    "node": ">=18.0.0"
++  },
++  "files": [
++    "dist/"
++  ]
++}
+diff --git a/src/cli/src/index.ts b/src/cli/src/index.ts
+new file mode 100644
+index 0000000..450041e
+--- /dev/null
++++ b/src/cli/src/index.ts
+@@ -0,0 +1,366 @@
++#!/usr/bin/env node
++
++/**
++ * msevents CLI — Lightweight session catalog tool for Microsoft events.
++ *
++ * Usage:
++ *   msevents search <query>       Search sessions by keyword
++ *   msevents tech <technology>    Find sessions by technology/framework
++ *   msevents get <sessionId>      Get full details for a session
++ *   msevents speakers <name>      Search speakers by name
++ *   msevents list [--type BRK]    List all sessions, optionally filtered by type
++ *   msevents refresh              Force-refresh the local cache
++ *
++ * The CLI fetches the session catalog JSON from the Build website,
++ * caches it locally, and provides fast offline search.
++ */
++
++import { resolve, join } from "node:path";
++import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from "node:fs";
++import { homedir } from "node:os";
++import { get as httpsGet } from "node:https";
++import { get as httpGet } from "node:http";
++
++// ── Types ──
++
++interface Session {
++  sessionId: string;
++  title: string;
++  description: string;
++  speakers: string[];
++  track: string;
++  level: string;
++  type: string; // BRK, DEM, LAB
++  technologies: string[];
++  time?: string;
++  url?: string;
++}
++
++interface CatalogData {
++  sessions: Session[];
++  fetchedAt: string;
++}
++
++// ── Configuration ──
++
++const CATALOG_URL =
++  process.env.MSEVENTS_CATALOG_URL ??
++  "https://build.microsoft.com/api/sessions";
++
++const CACHE_DIR = join(homedir(), ".msevents");
++const CACHE_FILE = join(CACHE_DIR, "catalog.json");
++const CACHE_MAX_AGE_MS = 4 * 60 * 60 * 1000; // 4 hours
++
++// ── Cache ──
++
++function ensureCacheDir(): void {
++  if (!existsSync(CACHE_DIR)) {
++    mkdirSync(CACHE_DIR, { recursive: true });
++  }
++}
++
++function isCacheFresh(): boolean {
++  if (!existsSync(CACHE_FILE)) return false;
++  const stat = statSync(CACHE_FILE);
++  return Date.now() - stat.mtimeMs < CACHE_MAX_AGE_MS;
++}
++
++function readCache(): CatalogData | null {
++  if (!existsSync(CACHE_FILE)) return null;
++  try {
++    const raw = readFileSync(CACHE_FILE, "utf-8");
++    return JSON.parse(raw) as CatalogData;
++  } catch {
++    return null;
++  }
++}
++
++function writeCache(data: CatalogData): void {
++  ensureCacheDir();
++  writeFileSync(CACHE_FILE, JSON.stringify(data, null, 2), "utf-8");
++}
++
++// ── HTTP Fetch ──
++
++function fetchJSON(url: string): Promise<string> {
++  return new Promise((resolve, reject) => {
++    const getter = url.startsWith("https") ? httpsGet : httpGet;
++    getter(url, (res) => {
++      // Follow redirects
++      if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
++        fetchJSON(res.headers.location).then(resolve).catch(reject);
++        return;
++      }
++      if (res.statusCode && res.statusCode >= 400) {
++        reject(new Error(`HTTP ${res.statusCode} fetching ${url}`));
++        return;
++      }
++      let body = "";
++      res.on("data", (chunk: string) => (body += chunk));
++      res.on("end", () => resolve(body));
++      res.on("error", reject);
++    }).on("error", reject);
++  });
++}
++
++// ── Data Loading ──
++
++function normalizeSessions(raw: unknown): Session[] {
++  // Handle various JSON shapes the Build API might return
++  const arr = Array.isArray(raw) ? raw : (raw as Record<string, unknown>)?.sessions;
++  if (!Array.isArray(arr)) return [];
++
++  return arr.map((s: Record<string, unknown>) => ({
++    sessionId: String(s.sessionId ?? s.sessionCode ?? s.id ?? ""),
++    title: String(s.title ?? s.name ?? ""),
++    description: String(s.description ?? s.abstract ?? s.summary ?? ""),
++    speakers: Array.isArray(s.speakers)
++      ? s.speakers.map((sp: unknown) =>
++          typeof sp === "string" ? sp : String((sp as Record<string, unknown>)?.name ?? sp))
++      : [],
++    track: String(s.track ?? s.category ?? s.topic ?? ""),
++    level: String(s.level ?? s.skillLevel ?? ""),
++    type: String(s.type ?? s.sessionType ?? inferType(String(s.sessionId ?? s.sessionCode ?? ""))),
++    technologies: Array.isArray(s.technologies)
++      ? s.technologies.map(String)
++      : extractTechnologies(String(s.description ?? "")),
++    time: s.time ? String(s.time) : s.startTime ? String(s.startTime) : undefined,
++    url: s.url ? String(s.url) : undefined,
++  }));
++}
++
++function inferType(id: string): string {
++  if (id.startsWith("BRK")) return "Breakout";
++  if (id.startsWith("DEM")) return "Demo";
++  if (id.startsWith("LAB")) return "Lab";
++  return "Session";
++}
++
++const KNOWN_TECH = [
++  "azure", "kubernetes", "aks", "docker", "container", "cosmos", "sql",
++  "postgres", "openai", "gpt", "copilot", "github", ".net", "aspire",
++  "python", "typescript", "javascript", "node", "react", "next.js",
++  "java", "spring", "rust", "go", "terraform", "bicep", "fabric",
++  "semantic kernel", "langchain", "foundry", "mcp", "agent", "wsl",
++  "windows", "linux", "functions", "app service", "container apps",
++  "redis", "event hubs", "service bus", "signalr", "onnx",
++];
++
++function extractTechnologies(text: string): string[] {
++  const lower = text.toLowerCase();
++  return KNOWN_TECH.filter((t) => lower.includes(t));
++}
++
++async function loadCatalog(forceRefresh = false): Promise<Session[]> {
++  // 1. Try cache first
++  if (!forceRefresh && isCacheFresh()) {
++    const cached = readCache();
++    if (cached && cached.sessions.length > 0) {
++      return cached.sessions;
++    }
++  }
++
++  // 2. Try local file (for dev/testing)
++  const localFile = resolve(process.cwd(), "sessions.json");
++  if (existsSync(localFile)) {
++    try {
++      const raw = JSON.parse(readFileSync(localFile, "utf-8"));
++      const sessions = normalizeSessions(raw);
++      if (sessions.length > 0) {
++        writeCache({ sessions, fetchedAt: new Date().toISOString() });
++        return sessions;
++      }
++    } catch {
++      // fall through to HTTP
++    }
++  }
++
++  // 3. Fetch from HTTP
++  try {
++    const body = await fetchJSON(CATALOG_URL);
++    const raw = JSON.parse(body);
++    const sessions = normalizeSessions(raw);
++    if (sessions.length > 0) {
++      writeCache({ sessions, fetchedAt: new Date().toISOString() });
++    }
++    return sessions;
++  } catch (err) {
++    // 4. Fall back to stale cache
++    const stale = readCache();
++    if (stale && stale.sessions.length > 0) {
++      console.error("⚠ Using cached data (fetch failed):", (err as Error).message);
++      return stale.sessions;
++    }
++    throw new Error(`Failed to load session catalog: ${(err as Error).message}`);
++  }
++}
++
++// ── Search Functions ──
++
++function searchSessions(sessions: Session[], query: string): Session[] {
++  const terms = query.toLowerCase().split(/\s+/);
++  return sessions
++    .map((s) => {
++      const text = `${s.sessionId} ${s.title} ${s.description} ${s.track} ${s.speakers.join(" ")} ${s.technologies.join(" ")}`.toLowerCase();
++      const score = terms.reduce((acc, term) => acc + (text.includes(term) ? 1 : 0), 0);
++      return { session: s, score };
++    })
++    .filter((r) => r.score > 0)
++    .sort((a, b) => b.score - a.score)
++    .map((r) => r.session);
++}
++
++function searchByTech(sessions: Session[], tech: string): Session[] {
++  const lower = tech.toLowerCase();
++  return sessions.filter((s) => {
++    const text = `${s.title} ${s.description} ${s.technologies.join(" ")}`.toLowerCase();
++    return text.includes(lower);
++  });
++}
++
++function getSession(sessions: Session[], id: string): Session | undefined {
++  const upper = id.toUpperCase();
++  return sessions.find((s) => s.sessionId.toUpperCase() === upper);
++}
++
++function searchSpeakers(sessions: Session[], name: string): Session[] {
++  const lower = name.toLowerCase();
++  return sessions.filter((s) =>
++    s.speakers.some((sp) => sp.toLowerCase().includes(lower))
++  );
++}
++
++function filterByType(sessions: Session[], type: string): Session[] {
++  const upper = type.toUpperCase();
++  return sessions.filter((s) =>
++    s.sessionId.toUpperCase().startsWith(upper) || s.type.toUpperCase().includes(upper)
++  );
++}
++
++// ── Output Formatting ──
++
++function formatSession(s: Session, verbose = false): string {
++  const lines: string[] = [];
++  lines.push(`**${s.sessionId}** — ${s.title}`);
++  if (s.speakers.length > 0) lines.push(`  Speakers: ${s.speakers.join(", ")}`);
++  if (s.track) lines.push(`  Track: ${s.track}`);
++  if (s.type) lines.push(`  Type: ${s.type}`);
++  if (s.time) lines.push(`  Time: ${s.time}`);
++  if (verbose) {
++    if (s.description) lines.push(`  ${s.description}`);
++    if (s.technologies.length > 0) lines.push(`  Technologies: ${s.technologies.join(", ")}`);
++    if (s.url) lines.push(`  URL: ${s.url}`);
++  }
++  return lines.join("\n");
++}
++
++function formatList(sessions: Session[], limit = 20): string {
++  if (sessions.length === 0) return "No sessions found.";
++  const shown = sessions.slice(0, limit);
++  const result = shown.map((s) => formatSession(s)).join("\n\n");
++  if (sessions.length > limit) {
++    return `${result}\n\n... and ${sessions.length - limit} more. Use a more specific query to narrow results.`;
++  }
++  return result;
++}
++
++// ── CLI Entry Point ──
++
++async function main(): Promise<void> {
++  const args = process.argv.slice(2);
++  const command = args[0]?.toLowerCase();
++
++  if (!command || command === "help" || command === "--help" || command === "-h") {
++    console.log(`
++msevents — Microsoft Event Session Catalog CLI
++
++Usage:
++  msevents search <query>        Search sessions by keyword
++  msevents tech <technology>     Find sessions by technology/framework
++  msevents get <sessionId>       Get full details for a session (e.g., BRK223)
++  msevents speakers <name>       Search sessions by speaker name
++  msevents list [--type BRK]     List sessions, optionally by type (BRK/DEM/LAB)
++  msevents refresh               Force-refresh the local cache
++  msevents help                  Show this help
++
++Environment:
++  MSEVENTS_CATALOG_URL    Override the session catalog URL
++
++Cache: ${CACHE_FILE}
++`);
++    return;
++  }
++
++  const query = args.slice(1).join(" ");
++
++  try {
++    if (command === "refresh") {
++      const sessions = await loadCatalog(true);
++      console.log(`✓ Refreshed cache: ${sessions.length} sessions loaded.`);
++      return;
++    }
++
++    const sessions = await loadCatalog();
++
++    switch (command) {
++      case "search": {
++        if (!query) {
++          console.error("Usage: msevents search <query>");
++          process.exit(1);
++        }
++        const results = searchSessions(sessions, query);
++        console.log(formatList(results));
++        break;
++      }
++      case "tech": {
++        if (!query) {
++          console.error("Usage: msevents tech <technology>");
++          process.exit(1);
++        }
++        const results = searchByTech(sessions, query);
++        console.log(formatList(results));
++        break;
++      }
++      case "get": {
++        if (!query) {
++          console.error("Usage: msevents get <sessionId>");
++          process.exit(1);
++        }
++        const session = getSession(sessions, query);
++        if (!session) {
++          console.error(`Session "${query}" not found.`);
++          process.exit(1);
++        }
++        console.log(formatSession(session, true));
++        break;
++      }
++      case "speakers": {
++        if (!query) {
++          console.error("Usage: msevents speakers <name>");
++          process.exit(1);
++        }
++        const results = searchSpeakers(sessions, query);
++        console.log(formatList(results));
++        break;
++      }
++      case "list": {
++        const typeFlag = args.indexOf("--type");
++        if (typeFlag !== -1 && args[typeFlag + 1]) {
++          const filtered = filterByType(sessions, args[typeFlag + 1]);
++          console.log(formatList(filtered, 50));
++        } else {
++          console.log(formatList(sessions, 50));
++        }
++        break;
++      }
++      default:
++        console.error(`Unknown command: ${command}. Run "msevents help" for usage.`);
++        process.exit(1);
++    }
++  } catch (err) {
++    console.error(`Error: ${(err as Error).message}`);
++    process.exit(1);
++  }
++}
++
++main();
+diff --git a/src/cli/tsconfig.json b/src/cli/tsconfig.json
+new file mode 100644
+index 0000000..2edf508
+--- /dev/null
++++ b/src/cli/tsconfig.json
+@@ -0,0 +1,18 @@
++{
++  "compilerOptions": {
++    "target": "ES2022",
++    "module": "Node16",
++    "moduleResolution": "Node16",
++    "outDir": "dist",
++    "rootDir": "src",
++    "strict": true,
++    "esModuleInterop": true,
++    "skipLibCheck": true,
++    "forceConsistentCasingInFileNames": true,
++    "declaration": true,
++    "declarationMap": true,
++    "sourceMap": true
++  },
++  "include": ["src/**/*"],
++  "exclude": ["node_modules", "dist"]
++}

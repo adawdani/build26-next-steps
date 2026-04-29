@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "setopt": true,
+        "git push": true,
+        "mkdocs": true,
+        "mdfind": true
+    }
+}
