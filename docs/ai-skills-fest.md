@@ -11,7 +11,7 @@ AI Skills Fest learning programs and resources from Microsoft Build 2026.
 3. Complete the challenges and earn digital badges
 4. Share your progress with the community
 
-## Additional Resources
+## 📚 Additional Resources
 
 - [AI Skills Fest](https://aiskillsfest.com) — Official AI Skills Fest event site
 - [Microsoft Learn AI learning hub](https://learn.microsoft.com/ai/) — Central AI learning resource
