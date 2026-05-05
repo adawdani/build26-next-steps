@@ -3,7 +3,7 @@
 # Windows
 
 Explore the labs and session repositories from Microsoft Build 2026 focused on the Windows platform and development.
-![Windows](img/windows.png){ width="100%" style="height:24px;object-fit:cover;object-position:center" }
+![Windows](img/windows.png)
 
 ## 🎯 Session Repositories
 

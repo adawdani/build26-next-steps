@@ -3,7 +3,7 @@
 # Responsible AI
 
 Explore the labs and session repositories from Microsoft Build 2026 focused on responsible AI practices, safety, and governance.
-![Responsible AI](img/responsible-ai.png){ width="100%" style="height:24px;object-fit:cover;object-position:center" }
+![Responsible AI](img/responsible-ai.png)
 
 ## 🎯 Session Repositories
 

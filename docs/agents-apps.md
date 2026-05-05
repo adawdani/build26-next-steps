@@ -4,7 +4,7 @@
 
 Explore the labs and session repositories from Microsoft Build 2026 focused on AI agents, copilots, and intelligent AI-native applications.
 
-![Agents & Apps](img/agents-and-apps.png){ width="100%" style="height:24px;object-fit:cover;object-position:center" }
+![Agents & Apps](img/agents-and-apps.png)
 
 ## 🎯 Session Repositories
 
