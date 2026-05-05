@@ -1,6 +1,6 @@
-![Global Skilling](../img/mask-group.png)
+![Skills Hub](img/skills-hub-banner.png)
 
-# Global Skilling
+# Skills Hub
 
 Worldwide skilling programs and learning paths from Microsoft Build 2026.
 

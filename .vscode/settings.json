@@ -1,4 +1,12 @@
 {
+    "workbench.colorTheme": "Dark Modern",
+    "workbench.colorCustomizations": {
+        "editor.background": "#0d1a0d",
+        "sideBar.background": "#071007",
+        "panel.background": "#0d1a0d",
+        "tab.activeBackground": "#0d1a0d",
+        "tab.inactiveBackground": "#071007"
+    },
     "chat.tools.terminal.autoApprove": {
         "setopt": true,
         "git push": true,
