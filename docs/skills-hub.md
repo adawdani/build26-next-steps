@@ -1,4 +1,4 @@
-![Skills Hub](img/skills-hub-banner.png)
+![Skills Hub](/img/skills-hub-banner.png)
 
 # Skills Hub
 
