@@ -28,6 +28,13 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on A
 | DEM361: Understand and fix Agent Framework apps with observability and evals | [Jim Bennett](https://build.microsoft.com/en-US/speakers/1768245294609build26-1776289931354001kW0l?source=/speakers) |
 | LAB530: Engineering agents that reason, act, and adapt | [Henk Boelman](https://build.microsoft.com/en-US/speakers/1768245294609build26-1754963585693001VLHf?source=/speakers), [Gustavo Cordido](https://build.microsoft.com/en-US/speakers/1768245294609build26-1756138101616001VtrM?source=/speakers) |
 | LAB532: From data to context: Agent‑ready knowledge with Foundry IQ | [Ayca Bas](https://build.microsoft.com/en-US/speakers/1768245294609build26-1762250455017001UQP1?source=/speakers), [Pamela Fox](https://build.microsoft.com/en-US/speakers/1768245294609build26-1756137289765001yN8u?source=/speakers) |
+| OD830: From zero to AI-powered document app: SharePoint Embedded + Copilot + Azure AI Foundry |  |
+| OD831: Govern AI models, tools, and agents with Azure API Management |  |
+| OD832: From workflows to agentic automation with Azure Logic Apps |  |
+| OD833: Deploy AI offline: Creating apps with Foundry Local |  |
+| OD836: From Test Kitchen to Table: A Demo-driven Tour of Foundry Portal for AI Developers |  |
+| OD837: Shipping physical AI to the edge with Azure Local and Foundry Local |  |
+| OD839: Foundry Local: AI solutions for industrial and sovereign needs |  |
 
 ## 📚 Additional Resources
 
