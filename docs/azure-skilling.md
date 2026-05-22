@@ -46,7 +46,7 @@ Ready for your next challenge? Put what you learn at Microsoft Build into action
 **Get Started:**
 - Complete your registration by June 12, 2026, 12:00 PM Pacific Time.
 - Review [Agents League hackathon rules and regulations](https://aka.ms/AgentsLeagueRules) for prize categories and judging criteria.
-- Join a live coding battle, click here for the full schedule.
+- Join a live coding battle, [click here for the full schedule](https://aka.ms/AISF/AL-Battles/Series).
 - Get started here: [Get started with Agents League hackathon](https://aka.ms/AgentsLeague/AISF)
 
 **Submit Your Project:**
