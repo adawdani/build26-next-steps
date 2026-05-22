@@ -4,6 +4,45 @@
 
 Test your skills and validate your knowledge with Azure-focused skilling challenges and resources to continue your Microsoft Build 2026 journey.
 
-## Resources
+## Test Your Skills - Azure Skills Challenges
 
-- <!-- azure skilling resource links -->
+| Challenge Name | Link | Notes |
+| --- | --- | --- |
+| Azure Migration Build Skills Challenge | [Azure Migration Build Skills Challenge](https://aka.ms/Azure_Migration/BuildSkillsChallenge) | |
+| Azure Modernization Build Skills Challenge | [Azure Modernization Build Skills Challenge](https://aka.ms/Azure_Modernization/BuildSkillsChallenge) | |
+| SQL AI Solutions Build Skills Challenge | [SQL AI Solutions Build Skills Challenge](https://aka.ms/SQL_AI_Solutions/BuildSkillsChallenge) | |
+
+## Livestreams - Connect with our Skilling Experts
+
+| Title | Date | Time | Synopsis | Learn More |
+| --- | --- | --- | --- | --- |
+| Agents League-Creative Apps Battle | June 9th | 9:00-10:00 am Pacific | experts use AI-assisted development to create innovative apps. They'll demonstrate GitHub Copilot and inspire participants to apply this knowledge in their submissions. | [Register](https://aka.ms/AISF/AL-Battle1/Reg) |
+| Agents League-Reasoning Agents Battle | June 10th | 9:00 am-10:00 am Pacific | experts use multi-step reasoning to create intelligent agents that solve complex problems. They'll demonstrate how to build with Microsoft Foundry and inspire participants to apply learnings in their submissions. | [Register](https://aka.ms/AISF/AL-Battle3/Reg) |
+| Agents League-Enterprise Agents Battle | June 11th | 9:00 am-10:00 am Pacific | experts build business‑ready knowledge agents integrated with Microsoft 365, authored in Copilot Studio. The hosts will send off the audience onto their last sprint before the hackathon closes on June 14th. | [Register](https://aka.ms/AISF/AL-Battle5/Reg) |
+| Azure Decoded: Ship & Monetize Agents-Architecture, Readiness, Release | June 10th | 12:00 pm-1:00 pm Pacific | Your agent works. Now make it shippable — and sellable. Learn what it truly takes to go from prototype to Microsoft Marketplace, with a no-nonsense walkthrough of production readiness, publishing workflow, and the checklists you need to turn what you've built into a commercial product. | [Register](https://aka.ms/AgentsLeagueMarketplaceReactor) |
+| Build awareness of AI app & agent development on Foundry with Claude Models | June 17th | 12:00 pm-1:00 pm Pacific | Learn to build intelligent AI apps using Microsoft Foundry and Claude — covering model deployment, prompt design, context management, and tool invocation. Explore agentic workflows, real-world use cases (copilots, automation, agents), and build working app components. Ideal for developers and solution architects. | [Register](https://aka.ms/AI_App_Agent_onFoundry_withClaude) |
+
+## Code, Collaborate and Compete - Agents League Hackathon
+
+![Agents League Hackathon](img/agents-league-banner.png)
+
+Ready for your next challenge? Put what you learn at Microsoft Build into action and compete for prizes at Agents League hackathon. Create and submit an AI agent to climb the leaderboard and compete for a total of $55,000 USD in prizes at this esports-inspired hackathon.
+
+**Challenge tracks—pick one or compete in all three:**
+- Creative Apps: Build innovative applications with AI-assisted development using GitHub Copilot.
+- Reasoning Agents: Create intelligent agents using Microsoft Foundry that solve complex problems through multi-step reasoning.
+- Enterprise Agents: Build business-ready agents for Microsoft 365 Copilot.
+
+**To help create your agent, you'll have access to:**
+- Live coding battles.
+- Curated technical experiences and on-demand content.
+- Resources on Microsoft Learn and AI Skills Navigator.
+
+**Get Started:**
+- Complete your registration by June 12, 2026, 12:00 PM Pacific Time.
+- Review [Agents League hackathon rules and regulations](https://aka.ms/AgentsLeagueRules) for prize categories and judging criteria.
+- Join a live coding battle, click here for the full schedule.
+- Get started here: [Get started with Agents League hackathon](https://aka.ms/AgentsLeague/AISF)
+
+**Submit Your Project:**
+Submit your project by June 14, 2026, 11:59 PM Pacific Time.
