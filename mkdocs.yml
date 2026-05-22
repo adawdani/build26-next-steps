@@ -18,7 +18,7 @@ exclude_docs: |
 nav:
   - Home: index.md
   - Session Topics:
-    - Agents & AI-native Apps: agents-apps.md
+    - Agents & Apps: agents-apps.md
     - Cloud Platform & Data: cloud-platform-data.md
     - Developer Tools & Frameworks: devtools-frameworks.md
     - Working with Models: model-training.md
