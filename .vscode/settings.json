@@ -11,6 +11,11 @@
         "setopt": true,
         "git push": true,
         "mkdocs": true,
-        "mdfind": true
+        "mdfind": true,
+        "/^git ls-files docs/img \\| rg 'skills-hub-banner\\|web-banner-2040x250b\\|banner-build-26\\|build_graphic' \\|\\| true$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "true": true
     }
 }
