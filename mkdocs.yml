@@ -26,7 +26,7 @@ nav:
     - Windows: windows.md
   - Skilling & Resources:
     - Azure Skilling: azure-skilling.md
-    - Global Skilling: global-skilling.md
+    - Skills Hub: skills-hub.md
     - AI Skills Fest: ai-skills-fest.md
   - Microsoft Marketplace: microsoft-marketplace.md
   - MVP: mvp.md
@@ -63,6 +63,9 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 2
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - pymdownx.details
   - pymdownx.superfences
