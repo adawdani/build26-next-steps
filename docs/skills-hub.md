@@ -6,7 +6,7 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 
 ## AI Skills Fest
 
-<table>
+<table border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td style="vertical-align: top; width: 56%;">
 			<h3>Register now for AI Skills Fest!</h3>
@@ -21,7 +21,7 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 
 ## Grow your career with Microsoft Credentials
 
-<table>
+<table border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td style="vertical-align: top; width: 44%;">
 			<img src="img/credentials.png" alt="Microsoft Credentials" width="264" height="264" />
@@ -35,7 +35,7 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 
 ## Explore AI Skills Navigator
 
-<table>
+<table border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td style="vertical-align: top; width: 56%;">
 			<p>AI Skills Navigator is an agentic learning space, bringing together AI, cloud, and security training into one seamless, connected skilling experience to help you build career skills.</p>
