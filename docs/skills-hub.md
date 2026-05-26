@@ -4,8 +4,6 @@
 
 From Build inspiration to real-world creation – your next move starts now. Whether you joined a few sessions or dove deep into a topic, keep building momentum and apply what you've learned.
 
-### AI Skills Fest
-
 <table border="0" cellspacing="0" cellpadding="0" style="border: none; border-collapse: collapse;">
 	<tr>
 		<td style="border: none; vertical-align: top; width: 56%;">
