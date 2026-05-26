@@ -4,7 +4,7 @@
 
 From Build inspiration to real-world creation – your next move starts now. Whether you joined a few sessions or dove deep into a topic, keep building momentum and apply what you've learned.
 
-## AI Skills Fest
+### AI Skills Fest
 
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr>
@@ -19,7 +19,7 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 	</tr>
 </table>
 
-## Grow your career with Microsoft Credentials
+### Grow your career with Microsoft Credentials
 
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr>
@@ -33,7 +33,7 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 	</tr>
 </table>
 
-## Explore AI Skills Navigator
+### Explore AI Skills Navigator
 
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr>
@@ -47,6 +47,6 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 	</tr>
 </table>
 
-## 📚 Additional Resources
+### 📚 Additional Resources
 
 - [GitHub Learn](#) — Continue your learning journey and gain real-world GitHub skills at your own pace
