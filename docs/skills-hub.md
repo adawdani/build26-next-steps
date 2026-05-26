@@ -6,12 +6,12 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 
 <table>
 <tr>
-<td width="56%" valign="top">
+<td valign="top">
 <h3>Register now for AI Skills Fest!</h3>
 <p>Join us online for a week of practical skill building at no cost and earn rewards as you complete content curated for your role. Powered by AI Skills Navigator - an agentic learning space.</p>
 <p><a href="https://www.microsoft.com/en-us/ai/skills-fest">Register now</a></p>
 </td>
-<td width="44%" valign="top" align="right">
+<td width="150" valign="top" align="right">
 <img src="img/ai-skills-fest-square.png" alt="AI Skills Fest" width="150" />
 </td>
 </tr>
@@ -21,10 +21,10 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 
 <table>
 <tr>
-<td width="44%" valign="top" align="left">
+<td width="150" valign="top" align="left">
 <img src="img/credentials.png" alt="Microsoft Credentials" width="150" />
 </td>
-<td width="56%" valign="top">
+<td valign="top">
 <p><a href="https://aiskillsnavigator.microsoft.com/credentials?UTM_Source=BLD_Webpage&UTM_Medium=Webpage&UTM_Campaign=NextSteps">Discover credentials on AI</a></p>
 <p><a href="https://gh.io/copilot-proficiency">Join the Insider's list</a> to get exclusive early access to the Microsoft ProBadge: GitHub Copilot - powered by Verified Proficiencies</p>
 </td>
@@ -35,11 +35,11 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 
 <table>
 <tr>
-<td width="56%" valign="top">
+<td valign="top">
 <p>AI Skills Navigator is an agentic learning space, bringing together AI, cloud, and security training into one seamless, connected skilling experience to help you build career skills.</p>
 <p><a href="https://aiskillsnavigator.microsoft.com">Get started</a></p>
 </td>
-<td width="44%" valign="top" align="right">
+<td width="150" valign="top" align="right">
 <img src="img/ai-skills-navigator-square.png" alt="AI Skills Navigator" width="150" />
 </td>
 </tr>
