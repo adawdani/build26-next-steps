@@ -21,7 +21,6 @@ Microsoft Build is anchored in technical depth, developer credibility, and inter
 
 - [Build Skills Challenge](docs/build-skills-challenge.md) — Azure-focused learning plans
 - [Skills Hub](docs/skills-hub.md) — Worldwide skilling programs
-- [AI Skills Fest](docs/ai-skills-fest.md) — AI Skills Fest learning programs and resources
 - [Microsoft Marketplace](docs/microsoft-marketplace.md) — Microsoft Marketplace resources and extensions
 - [MVP](docs/mvp.md) — Microsoft MVP community resources
 - [Microsoft Build Info](docs/microsoft-build-info.md) — Event information and links
