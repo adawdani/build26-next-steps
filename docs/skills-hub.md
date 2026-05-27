@@ -19,8 +19,8 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 
 <table>
 <tr>
-<td width="200" valign="top" align="left">
-<img src="img/announcements.png" alt="Microsoft Build Announcements" width="200" />
+<td width="200" valign="top" align="left" style="padding:0;">
+<img src="img/announcements.png" alt="Microsoft Build Announcements" width="200" style="display:block;" />
 </td>
 <td valign="top">
 <h3>Check out the announcements from Microsoft Build</h3>
