@@ -37,18 +37,18 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on f
 ## 📚 Additional Resources
 
 ### GitHub Copilot and Agentic Coding
-- [GitHub Copilot on Microsoft Learn](https://learn.microsoft.com/training/github-copilot/?wt.mc_id=build26-next-steps-resources) - Curated learning collection for Copilot fundamentals and advanced workflows.
-- [Introduction to GitHub Copilot](https://learn.microsoft.com/training/modules/introduction-to-github-copilot/?wt.mc_id=build26-next-steps-resources) - Core concepts for prompt-driven code generation and review.
-- [Accelerate app development by using GitHub Copilot](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?wt.mc_id=build26-next-steps-resources) - Practical path for integrating Copilot into day-to-day engineering work.
+- [GitHub Copilot on Microsoft Learn](https://learn.microsoft.com/training/github-copilot/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Curated learning collection for Copilot fundamentals and advanced workflows.
+- [Introduction to GitHub Copilot](https://learn.microsoft.com/training/modules/introduction-to-github-copilot/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Core concepts for prompt-driven code generation and review.
+- [Accelerate app development by using GitHub Copilot](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Practical path for integrating Copilot into day-to-day engineering work.
 
 ### CI/CD and Engineering Systems
-- [GitHub Actions documentation](https://learn.microsoft.com/github/actions?wt.mc_id=build26-next-steps-resources) - Build, test, and deploy workflows for modern software delivery.
-- [Create your first GitHub Actions workflow](https://learn.microsoft.com/github/actions/quickstart?wt.mc_id=build26-next-steps-resources) - Hands-on quickstart for pipeline automation.
-- [Azure DevOps documentation](https://learn.microsoft.com/azure/devops/?view=azure-devops&wt.mc_id=build26-next-steps-resources) - End-to-end planning, code, build, and release guidance.
-- [What is Azure DevOps?](https://learn.microsoft.com/azure/devops/user-guide/what-is-azure-devops?view=azure-devops&wt.mc_id=build26-next-steps-resources) - Service overview and how components map to SDLC.
+- [GitHub Actions documentation](https://learn.microsoft.com/github/actions?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Build, test, and deploy workflows for modern software delivery.
+- [Create your first GitHub Actions workflow](https://learn.microsoft.com/github/actions/quickstart?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Hands-on quickstart for pipeline automation.
+- [Azure DevOps documentation](https://learn.microsoft.com/azure/devops/?view=azure-devops&wt.mc_id=build26_nextstepsresources_1pevents_cnl) - End-to-end planning, code, build, and release guidance.
+- [What is Azure DevOps?](https://learn.microsoft.com/azure/devops/user-guide/what-is-azure-devops?view=azure-devops&wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Service overview and how components map to SDLC.
 
 ### Developer Tools and Frameworks
-- [Visual Studio profiling tools](https://learn.microsoft.com/visualstudio/profiling/?view=vs-2022&wt.mc_id=build26-next-steps-resources) - Performance diagnostics for CPU, memory, and application behavior.
-- [Visual Studio debugger documentation](https://learn.microsoft.com/visualstudio/debugger/?view=vs-2022&wt.mc_id=build26-next-steps-resources) - Debugging techniques for local and distributed application issues.
-- [.NET Aspire overview](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview?wt.mc_id=build26-next-steps-resources) - Cloud-native app composition and orchestration for distributed systems.
-- [.NET Aspire deployment overview](https://learn.microsoft.com/dotnet/aspire/deployment/overview?wt.mc_id=build26-next-steps-resources) - Guidance for running Aspire apps across development and production environments.
+- [Visual Studio profiling tools](https://learn.microsoft.com/visualstudio/profiling/?view=vs-2022&wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Performance diagnostics for CPU, memory, and application behavior.
+- [Visual Studio debugger documentation](https://learn.microsoft.com/visualstudio/debugger/?view=vs-2022&wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Debugging techniques for local and distributed application issues.
+- [.NET Aspire overview](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Cloud-native app composition and orchestration for distributed systems.
+- [.NET Aspire deployment overview](https://learn.microsoft.com/dotnet/aspire/deployment/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Guidance for running Aspire apps across development and production environments.

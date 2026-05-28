@@ -39,24 +39,24 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on c
 ## 📚 Additional Resources
 
 ### Cloud-Native Platform (AKS)
-- [What is Azure Kubernetes Service (AKS)?](https://learn.microsoft.com/azure/aks/what-is-aks?wt.mc_id=build26-next-steps-resources) - Core AKS concepts and architecture for production workloads.
-- [MLOps best practices in AKS](https://learn.microsoft.com/azure/aks/best-practices-ml-ops?wt.mc_id=build26-next-steps-resources) - Guidance for deploying, operating, and scaling AI/ML workloads on AKS.
-- [AKS performance and scaling best practices](https://learn.microsoft.com/azure/aks/best-practices-performance-scale?wt.mc_id=build26-next-steps-resources) - Node, image, and scaling recommendations for reliable cluster performance.
-- [Azure Linux Container Host for AKS](https://learn.microsoft.com/azure/azure-linux/intro-azure-linux?wt.mc_id=build26-next-steps-resources) - Overview of Azure Linux for container-focused AKS node pools.
+- [What is Azure Kubernetes Service (AKS)?](https://learn.microsoft.com/azure/aks/what-is-aks?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Core AKS concepts and architecture for production workloads.
+- [MLOps best practices in AKS](https://learn.microsoft.com/azure/aks/best-practices-ml-ops?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Guidance for deploying, operating, and scaling AI/ML workloads on AKS.
+- [AKS performance and scaling best practices](https://learn.microsoft.com/azure/aks/best-practices-performance-scale?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Node, image, and scaling recommendations for reliable cluster performance.
+- [Azure Linux Container Host for AKS](https://learn.microsoft.com/azure/azure-linux/intro-azure-linux?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Overview of Azure Linux for container-focused AKS node pools.
 
 ### Data Platforms and Analytics (Microsoft Fabric)
-- [Microsoft Fabric overview](https://learn.microsoft.com/fabric/fundamentals/microsoft-fabric-overview?wt.mc_id=build26-next-steps-resources) - End-to-end analytics and data platform capabilities.
-- [End-to-end data lifecycle in Fabric](https://learn.microsoft.com/fabric/fundamentals/data-lifecycle?wt.mc_id=build26-next-steps-resources) - Ingest, transform, analyze, and operationalize data across OneLake and Fabric workloads.
-- [Analyze and train data in Fabric](https://learn.microsoft.com/fabric/fundamentals/analyze-train-data?wt.mc_id=build26-next-steps-resources) - Data science, MLflow, and AI-enabled analytics workflows in Fabric.
+- [Microsoft Fabric overview](https://learn.microsoft.com/fabric/fundamentals/microsoft-fabric-overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - End-to-end analytics and data platform capabilities.
+- [End-to-end data lifecycle in Fabric](https://learn.microsoft.com/fabric/fundamentals/data-lifecycle?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Ingest, transform, analyze, and operationalize data across OneLake and Fabric workloads.
+- [Analyze and train data in Fabric](https://learn.microsoft.com/fabric/fundamentals/analyze-train-data?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Data science, MLflow, and AI-enabled analytics workflows in Fabric.
 
 ### Databases for AI Apps and Agents
-- [Intelligent applications and AI in Azure SQL Database](https://learn.microsoft.com/azure/azure-sql/database/ai-artificial-intelligence-intelligent-applications?view=azuresql&wt.mc_id=build26-next-steps-resources) - Patterns for RAG, vector search, and AI-integrated application design.
-- [AI agents in Azure Database for PostgreSQL](https://learn.microsoft.com/azure/postgresql/azure-ai/generative-ai-agents?wt.mc_id=build26-next-steps-resources) - Build agent workflows with PostgreSQL vector capabilities and Microsoft Foundry Agent Service.
-- [Semantic search with Azure Database for PostgreSQL and Azure OpenAI](https://learn.microsoft.com/azure/postgresql/azure-ai/generative-ai-semantic-search?wt.mc_id=build26-next-steps-resources) - Hands-on tutorial for semantic retrieval over Postgres data.
-- [AI agents in Azure Cosmos DB](https://learn.microsoft.com/azure/cosmos-db/ai-agents?wt.mc_id=build26-next-steps-resources) - Design guidance for agent memory, vector search, and globally distributed NoSQL workloads.
-- [Azure Cosmos DB integrations for AI applications](https://learn.microsoft.com/azure/cosmos-db/gen-ai/integrations?wt.mc_id=build26-next-steps-resources) - Semantic Kernel, LangChain, LlamaIndex, and related integration references.
+- [Intelligent applications and AI in Azure SQL Database](https://learn.microsoft.com/azure/azure-sql/database/ai-artificial-intelligence-intelligent-applications?view=azuresql&wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Patterns for RAG, vector search, and AI-integrated application design.
+- [AI agents in Azure Database for PostgreSQL](https://learn.microsoft.com/azure/postgresql/azure-ai/generative-ai-agents?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Build agent workflows with PostgreSQL vector capabilities and Microsoft Foundry Agent Service.
+- [Semantic search with Azure Database for PostgreSQL and Azure OpenAI](https://learn.microsoft.com/azure/postgresql/azure-ai/generative-ai-semantic-search?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Hands-on tutorial for semantic retrieval over Postgres data.
+- [AI agents in Azure Cosmos DB](https://learn.microsoft.com/azure/cosmos-db/ai-agents?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Design guidance for agent memory, vector search, and globally distributed NoSQL workloads.
+- [Azure Cosmos DB integrations for AI applications](https://learn.microsoft.com/azure/cosmos-db/gen-ai/integrations?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Semantic Kernel, LangChain, LlamaIndex, and related integration references.
 
 ### Reliability and Resiliency
-- [Azure reliability overview](https://learn.microsoft.com/azure/reliability/overview?wt.mc_id=build26-next-steps-resources) - Reliability concepts, capabilities, and service guidance across Azure.
-- [AKS architecture best practices (Well-Architected)](https://learn.microsoft.com/azure/well-architected/service-guides/azure-kubernetes-service?wt.mc_id=build26-next-steps-resources) - Reliability, security, and operational excellence guidance for AKS.
-- [Reliability testing strategy](https://learn.microsoft.com/azure/well-architected/reliability/testing-strategy?wt.mc_id=build26-next-steps-resources) - Fault injection and chaos engineering recommendations for resilient cloud systems.
+- [Azure reliability overview](https://learn.microsoft.com/azure/reliability/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Reliability concepts, capabilities, and service guidance across Azure.
+- [AKS architecture best practices (Well-Architected)](https://learn.microsoft.com/azure/well-architected/service-guides/azure-kubernetes-service?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Reliability, security, and operational excellence guidance for AKS.
+- [Reliability testing strategy](https://learn.microsoft.com/azure/well-architected/reliability/testing-strategy?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Fault injection and chaos engineering recommendations for resilient cloud systems.

@@ -22,16 +22,16 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on t
 ## 📚 Additional Resources
 
 ### Windows Platform and Development
-- [Windows development overview](https://learn.microsoft.com/windows/dev-environment/?wt.mc_id=build26-next-steps-resources) - Modern tooling and frameworks for building Windows applications.
-- [Windows Copilot and AI integration](https://learn.microsoft.com/windows/ai/overview?wt.mc_id=build26-next-steps-resources) - Building and integrating AI features on Windows platforms.
-- [Desktop application development with .NET](https://learn.microsoft.com/dotnet/desktop/?view=netdesktop-8.0&wt.mc_id=build26-next-steps-resources) - WPF, WinUI 3, and other frameworks for Windows apps.
+- [Windows development overview](https://learn.microsoft.com/windows/dev-environment/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Modern tooling and frameworks for building Windows applications.
+- [Windows Copilot and AI integration](https://learn.microsoft.com/windows/ai/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Building and integrating AI features on Windows platforms.
+- [Desktop application development with .NET](https://learn.microsoft.com/dotnet/desktop/?view=netdesktop-8.0&wt.mc_id=build26_nextstepsresources_1pevents_cnl) - WPF, WinUI 3, and other frameworks for Windows apps.
 
 ### AI/ML on Windows
-- [Build AI-powered apps on Windows with Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to-develop-on-windows?wt.mc_id=build26-next-steps-resources) - Local and edge AI development for Windows platforms.
-- [ONNX Runtime for inference optimization](https://learn.microsoft.com/en-us/training/modules/intro-onnx-runtime/?wt.mc_id=build26-next-steps-resources) - Cross-platform model deployment and optimization.
-- [Windows AI with Windows.ML](https://learn.microsoft.com/windows/ai/windows-ml/?wt.mc_id=build26-next-steps-resources) - On-device machine learning for reduced latency and privacy.
+- [Build AI-powered apps on Windows with Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to-develop-on-windows?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Local and edge AI development for Windows platforms.
+- [ONNX Runtime for inference optimization](https://learn.microsoft.com/en-us/training/modules/intro-onnx-runtime/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Cross-platform model deployment and optimization.
+- [Windows AI with Windows.ML](https://learn.microsoft.com/windows/ai/windows-ml/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - On-device machine learning for reduced latency and privacy.
 
 ### Windows Subsystem for Linux (WSL)
-- [WSL documentation and setup](https://learn.microsoft.com/windows/wsl/?wt.mc_id=build26-next-steps-resources) - Running Linux environments natively on Windows.
-- [Develop with WSL and VS Code](https://learn.microsoft.com/windows/wsl/tutorials/wsl-vscode?wt.mc_id=build26-next-steps-resources) - Seamless Linux development from Windows.
-- [WSL networking and performance](https://learn.microsoft.com/windows/wsl/networking?wt.mc_id=build26-next-steps-resources) - Optimizing WSL for development workloads and container orchestration.
+- [WSL documentation and setup](https://learn.microsoft.com/windows/wsl/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Running Linux environments natively on Windows.
+- [Develop with WSL and VS Code](https://learn.microsoft.com/windows/wsl/tutorials/wsl-vscode?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Seamless Linux development from Windows.
+- [WSL networking and performance](https://learn.microsoft.com/windows/wsl/networking?wt.mc_id=build26_nextstepsresources_1pevents_cnl) - Optimizing WSL for development workloads and container orchestration.
