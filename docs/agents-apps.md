@@ -53,7 +53,14 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on A
 - [Choose between Microsoft 365 Copilot and Copilot Studio to build your agent](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio?wt.mc_id=build26_nextstepsresources_1pevents_cnl#build-your-own-copilot) — Guidance on selecting the right platform for your needs
 
 ### Microsoft Teams
-- [Microsoft Teams Platform](https://developer.microsoft.com/microsoft-teams)
+- [Microsoft Teams Platform](https://learn.microsoft.com/microsoftteams/platform/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) and [Teams SDK](https://learn.microsoft.com/microsoftteams/platform/teams-sdk/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — the platform and tools for building agents that collaborate in Teams
+- Teams features for conversational agents:
+   - [Targeted messages](https://learn.microsoft.com/microsoftteams/platform/agents-in-teams/targeted-messages?wt.mc_id=build26_nextstepsresources_1pevents_cnl)
+   - [Slash commands](https://learn.microsoft.com/microsoftteams/platform/agents-in-teams/agent-slash-commands?wt.mc_id=build26_nextstepsresources_1pevents_cnl)
+   - [Quoted and threaded replies](https://microsoft.github.io/teams-sdk/blog/quoted-and-threaded-replies)
+   - [Emoji message reactions](https://learn.microsoft.com/microsoftteams/platform/agents-in-teams/agent-reactions?wt.mc_id=build26_nextstepsresources_1pevents_cnl)
+   - [Prompt suggestions](https://learn.microsoft.com/microsoftteams/platform/bots/how-to/conversations/prompt-suggestions?wt.mc_id=build26_nextstepsresources_1pevents_cnl)
+- [Adaptive Cards](https://adaptivecards.microsoft.com/) — Create rich, interactive UI in Teams and other Microsoft platforms with declarative JSON
 
 ### Multi-Agent Systems & Architecture
 - [Single agent or multiple agents](https://learn.microsoft.com/azure/cloud-adoption-framework/ai-agents/single-agent-multiple-agents?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Decision framework for single vs. multi-agent system design
