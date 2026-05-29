@@ -25,7 +25,7 @@ From Build inspiration to real-world creation – your next move starts now. Whe
 <td valign="top">
 <h3>Check out the announcements from Microsoft Build</h3>
 <p>Prove what you build at Microsoft Build—introducing Microsoft ProBadge, AI-powered learning in M365 Copilot, and new skilling paths with Anthropic and Databricks. Learn in the flow, build across stacks, and take it further at AI Skills Fest with certification opportunities and an AI hackathon.</p>
-<p><a href="https://aka.ms/GS_Build2026">Read more</a></p>
+<p><a href="https://aka.ms/gs_build2026">Read more</a></p>
 </td>
 </tr>
 </table>
