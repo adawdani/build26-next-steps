@@ -51,6 +51,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on A
 - [Copilot Studio overview](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Low-code platform for building custom AI agents
 - [Microsoft Copilot Studio implementation and adoption guidance](https://learn.microsoft.com/microsoft-copilot-studio/guidance/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Provides guidance for organizations to design, build, and deploy custom conversational agents using Microsoft Copilot Studio
 - [Copilot Studio and agent samples](https://learn.microsoft.com/microsoft-copilot-studio/guidance/agent-samples?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Collection of samples and learning resources for Copilot Studio
+- [Microsoft 365 Copilot Cowork (Frontier)](https://learn.microsoft.com/microsoft-365/copilot/cowork/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Copilot Cowork enhances productivity by automating routine tasks across your Microsoft 365 environment. Users must be part of the Frontier preview program to access Cowork.
 - [Choose between Microsoft 365 Copilot and Copilot Studio to build your agent](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio?wt.mc_id=build26_nextstepsresources_1pevents_cnl#build-your-own-copilot) — Guidance on selecting the right platform for your needs
 
 ### Microsoft Teams
