@@ -35,6 +35,7 @@ Explore the labs and session repositories from Microsoft Build 2026 focused on c
 | Build an AI app with Azure SQL Hyperscale, Microsoft Fabric, & Foundry | [Matthew Calder](https://build.microsoft.com/en-US/speakers/1768245294609build26-1753129132101001Cp9w?source=/speakers), [Someleze Diko](https://build.microsoft.com/en-US/speakers/1768245294609build26-1762290823994001cHor?source=/speakers) | [Repo](https://aka.ms/build26/LAB513) | [LAB513](https://build.microsoft.com/en-US/sessions/LAB513) |
 | Ship AI apps fast with a managed backend in Microsoft Fabric | [Chris Anderson](https://build.microsoft.com/en-US/speakers/1768245294609build26-1776706498871001Ov8x?source=/speakers), [Pratyush Rawat](https://build.microsoft.com/en-US/speakers/1768245294609build26-1777584842315001x6I9?source=/speakers) | [Repo](https://aka.ms/build26/LAB514) | [LAB514](https://build.microsoft.com/en-US/sessions/LAB514) |
 | Designing Reliable Multi‑Agent Apps with Azure Cosmos DB | Aayush Kataria, Justine Cocchi | [Repo](https://aka.ms/build26/OD820) | [OD820](https://build.microsoft.com/en-US/sessions/OD820) |
+| Build fast, not fragile with Rayfin on Microsoft Fabric | Yohan Lasorsa | [Repo](https://aka.ms/build26/OD810) | [OD810](https://build.microsoft.com/en-US/sessions/OD810) |
 
 ## 📚 Additional Resources
 
