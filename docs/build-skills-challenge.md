@@ -46,6 +46,7 @@ Submit your project by June 14, 2026, 11:59 PM Pacific Time.
 ## Livestreams - Connect with our Skilling Experts
 
 ![Watch Live Engage On-Demand](img/livestream-header-section-final.png)
+
 | Title | Date | Time | Synopsis | Learn More |
 |------|------|---------------|----------|------------|
 | Agents League-Creative Apps Battle | June 9th | 9:00-10:00 am Pacific | Experts use AI-assisted development to create innovative apps. They'll demonstrate GitHub Copilot and inspire participants to apply this knowledge in their submissions. | [**🎨Creative Apps Battle**](https://aka.ms/AISF/AL-Battle1/Reg) |
