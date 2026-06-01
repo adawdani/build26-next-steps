@@ -26,7 +26,8 @@ Explore labs, session repositories, and additional resources from Microsoft Buil
 ## 📚 Additional Resources
 
 ### Microsoft Agents Hub
-- [Agents Hub](https://learn.microsoft.com/agents?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Central resource for discovering and building agents with Microsoft technologies
+- [Agents Hub](https://learn.microsoft.com/en-us/agents/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Microsoft Learn hub for agentic computing documentation
+- [Design guidelines for agents](https://learn.microsoft.com/agents/design-guidelines/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Review the design fundamentals of agents in the Microsoft ecosystem
 
 ### Microsoft Foundry
 - [What is Microsoft Foundry Agent Service?](https://learn.microsoft.com/azure/foundry/agents/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Overview and key capabilities of Foundry for building, testing, and deploying agents
@@ -38,7 +39,7 @@ Explore labs, session repositories, and additional resources from Microsoft Buil
 - [Copilot Studio overview](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Low-code platform for building custom AI agents
 - [Microsoft Copilot Studio implementation and adoption guidance](https://learn.microsoft.com/microsoft-copilot-studio/guidance/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Provides guidance for organizations to design, build, and deploy custom conversational agents using Microsoft Copilot Studio
 - [Copilot Studio and agent samples](https://learn.microsoft.com/microsoft-copilot-studio/guidance/agent-samples?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Collection of samples and learning resources for Copilot Studio
-- [Choose between Microsoft 365 Copilot and Copilot Studio to build your agent](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio?wt.mc_id=build26_nextstepsresources_1pevents_cnl#build-your-own-copilot) — Guidance on selecting the right platform for your needs
+- [Choose between Agent Builder in Microsoft 365 Copilot and Copilot Studio to build your agent](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Choose the right tool to build your declarative agent
 
 ### Microsoft Teams
 - [Microsoft Teams Platform](https://learn.microsoft.com/microsoftteams/platform/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) and [Teams SDK](https://learn.microsoft.com/microsoftteams/platform/teams-sdk/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — the platform and tools for building agents that collaborate in Teams
@@ -50,8 +51,17 @@ Explore labs, session repositories, and additional resources from Microsoft Buil
    - [Prompt suggestions](https://learn.microsoft.com/microsoftteams/platform/bots/how-to/conversations/prompt-suggestions?wt.mc_id=build26_nextstepsresources_1pevents_cnl)
 - [Adaptive Cards](https://adaptivecards.microsoft.com/) — Create rich, interactive UI in Teams and other Microsoft platforms with declarative JSON
 
-### M365 Copilot
+### Agent 365
+- [Microsoft Agent 365 SDK and CLI](https://learn.microsoft.com/microsoft-agent-365/developer?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Extend agents built using any agent SDK or platform, with enterprise‑grade identity, observability, notifications, security, and governed access to Microsoft 365 data
+- [Get started with Agent 365 development](https://learn.microsoft.com/microsoft-agent-365/developer/get-started?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Choose the right type of agent and progressively enable capabilities like identity, governance, observability, and tool access
+
+### Microsoft 365 Copilot extensibility
 - [Microsoft 365 Copilot Cowork (Frontier)](https://learn.microsoft.com/microsoft-365/copilot/cowork/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Copilot Cowork enhances productivity by automating routine tasks and projects across your Microsoft 365 environment. Users must be part of the Frontier preview program to access Cowork.
+- [Build agents with Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Use Agent Builder in Microsoft 365 Copilot to build agents using natural language
+- [Build agents with Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/overview-agents-toolkit?context=/microsoft-365/copilot/extensibility/context&wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Use TypeSpec or JSON to build enterprise-ready agents for Microsoft 365
+- [Add knowledge with Copilot connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Use connectors to enhance knowledge in Microsoft 365 Copilot and agents
+- [Use the Work IQ API (preview)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq-api-overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Build agentic and AI-powered applications that reason over Microsoft 365 data
+- [Use Copilot APIs](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-apis-overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Bring Copilot's functionality into your own apps and agents
 
 ### Learning & Development
 - [Orchestrate a multi-agent solution using Semantic Kernel](https://learn.microsoft.com/training/modules/orchestrate-semantic-kernel-multi-agent-solution/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Training module on building multi-agent solutions with Semantic Kernel SDK
