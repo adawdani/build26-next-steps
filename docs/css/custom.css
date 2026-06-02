@@ -116,7 +116,7 @@ img {
 }
 
 /* Ensure glightbox wrappers don't constrain topic strip banners. */
-.md-typeset a.glightbox[href$="agents-and-apps.png"],
+.md-typeset a.glightbox[href$="agents-and-apps-1.png"],
 .md-typeset a.glightbox[href$="cloud-platform-and-data.png"],
 .md-typeset a.glightbox[href$="developer-tools-and-frameworks-1.png"],
 .md-typeset a.glightbox[href$="responsible-ai.png"],
@@ -125,7 +125,7 @@ img {
   width: 100%;
 }
 
-.md-typeset a.glightbox[href$="agents-and-apps.png"] img,
+.md-typeset a.glightbox[href$="agents-and-apps-1.png"] img,
 .md-typeset a.glightbox[href$="cloud-platform-and-data.png"] img,
 .md-typeset a.glightbox[href$="developer-tools-and-frameworks-1.png"] img,
 .md-typeset a.glightbox[href$="responsible-ai.png"] img,
