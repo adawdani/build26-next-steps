@@ -23,6 +23,7 @@ Explore labs, session repositories, and additional resources from Microsoft Buil
 | From data to context: Agent‑ready knowledge with Foundry IQ | [Ayca Bas](https://build.microsoft.com/en-US/speakers/1768245294609build26-1762250455017001UQP1?source=/speakers), [Pamela Fox](https://build.microsoft.com/en-US/speakers/1768245294609build26-1756137289765001yN8u?source=/speakers) | [Repo](https://aka.ms/build26/LAB532) | [LAB532](https://build.microsoft.com/en-US/sessions/LAB532) |
 | From Test Kitchen to Table: A Demo-driven Tour of Foundry Portal for AI Developers | Carlotta Castelluccio, [Nitya Narasimhan](https://build.microsoft.com/en-US/speakers/1768245294609build26-1756141269010001LleM?source=/speakers) | [Repo](https://aka.ms/build26/OD836) | [OD836](https://build.microsoft.com/en-US/sessions/OD836) |
 | AI solutions built to power industrial innovation and sovereign control | Inbal Sagiv | [Repo](https://aka.ms/build26/OD839) | [OD839](https://build.microsoft.com/en-US/sessions/OD839) |
+| AI Skills Navigator: Accelerate tech skills with personalized learning | [Matt Erni](https://build.microsoft.com/en-US/speakers/1768245294609build26-1776095049777001mkE5?source=/speakers), [Shreenidhi Bindinganavile Ramanuja](https://build.microsoft.com/en-US/speakers/1768245294609build26-1775501322352001aycE?source=/speakers) | [Repo](https://aka.ms/build26/DEM351) | [DEM351](https://build.microsoft.com/en-US/sessions/DEM351) |
 
 ## 📚 Additional Resources
 
