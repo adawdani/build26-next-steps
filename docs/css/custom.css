@@ -106,11 +106,13 @@ img {
   object-position: center;
 }
 
-/* Keep this banner full-width at native height. */
+/* Keep this banner full-width at fixed strip height. */
 .md-typeset img[alt="Working with Models"] {
   display: block;
   width: 100%;
-  height: auto;
+  height: 24px;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Ensure glightbox wrappers don't constrain topic strip banners. */
@@ -144,7 +146,9 @@ img {
 .md-typeset a.glightbox[href$="model-training-2.png"] img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 24px;
+  object-fit: cover;
+  object-position: center;
 }
 
 
