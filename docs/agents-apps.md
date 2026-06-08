@@ -68,4 +68,4 @@ Explore labs, session repositories, and additional resources from Microsoft Buil
 
 ### Learning & Development
 - [Orchestrate a multi-agent solution using Semantic Kernel](https://learn.microsoft.com/training/modules/orchestrate-semantic-kernel-multi-agent-solution/?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Training module on building multi-agent solutions with Semantic Kernel SDK
-- [Adopt, extend and build Copilot experiences across the Microsoft Cloud](https://learn.microsoft.com/microsoft-cloud/dev/copilot/overview?wt.mc_id=build26_nextstepsresources_1pevents_cnl) — Comprehensive guide to building Copilot solutions
+- [Get certified](https://learn.microsoft.com/en-us/credentials/certifications/ai-agent-builder-associate/?wt.mc_id=credentials_AB620_blog_wwl&practice-assessment-type=certification) — Learn and validate your Copilot Studio agent development skills
